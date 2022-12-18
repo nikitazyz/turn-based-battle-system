@@ -14,6 +14,7 @@ namespace UserInterface.Views
     {
         public event Action EndMoveClicked;
         public event Action<int, int> DiceUsed; 
+        public event Action<int> Rerolled; 
 
         [SerializeField] private Button _endMoveButton;
         [SerializeField] private GuardianCellElement[] _guardianCellElements;
@@ -39,6 +40,7 @@ namespace UserInterface.Views
             {
                 var i1 = i;
                 _guardianCellElements[i].DiceUsed += j => DiceUsed?.Invoke(i1, j);
+                _guardianCellElements[i].Rerolled += () => Rerolled?.Invoke(i1);
             }
         }
     }

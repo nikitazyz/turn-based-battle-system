@@ -8,8 +8,10 @@ namespace UserInterface.Views.MoveViewElements
     public class GuardianCellElement : MonoBehaviour
     {
         public event Action<int> DiceUsed; 
+        public event Action Rerolled;
 
         [SerializeField] private BattleDiceElement[] _battleDiceElements;
+        [SerializeField] private Button _rerollButton;
         [SerializeField] private Image _avatarImage;
 
         public Sprite Avatar
@@ -27,6 +29,7 @@ namespace UserInterface.Views.MoveViewElements
                 var i1 = i;
                 battleDiceElement.Used += () => DiceUsed?.Invoke(i1);
             }
+            _rerollButton.onClick.AddListener(() => Rerolled?.Invoke());
         }
     }
 }

@@ -10,6 +10,7 @@ namespace UserInterface.Adapters
     {
         private IEventBus _endMove;
         private UseEventBus _useEventBus;
+        private RerollEventBus _rerollEventBus;
         public MoveView View { get; set; }
         public Battle Model { get; set; }
 
@@ -49,8 +50,35 @@ namespace UserInterface.Adapters
                 if (_useEventBus != null)
                 {
                     _useEventBus.EnableStateChanged += UseEventBusOnEnableStateChanged;
+                    UseEventBusOnEnableStateChanged(_useEventBus.Enabled);
                 }
             }
+        }
+        
+        public RerollEventBus RerollEvent
+        {
+            get => _rerollEventBus;
+            set
+            {
+                if (_rerollEventBus != null)
+                {
+                    _rerollEventBus.EnableStateChanged -= RerollEventBusOnEnableStateChanged;
+                    RerollEventBusOnEnableStateChanged(false);
+                }
+
+                _rerollEventBus = value;
+
+                if (_rerollEventBus != null)
+                {
+                    _rerollEventBus.EnableStateChanged += RerollEventBusOnEnableStateChanged;
+                    RerollEventBusOnEnableStateChanged(_rerollEventBus.Enabled);
+                }
+            }
+        }
+
+        private void RerollEventBusOnEnableStateChanged(bool obj)
+        {
+            
         }
 
         private void UseEventBusOnEnableStateChanged(bool obj)
@@ -83,6 +111,13 @@ namespace UserInterface.Adapters
                 }
             }
             view.DiceUsed += ViewOnDiceUsed;
+            view.Rerolled += ViewOnRerolled;
+        }
+
+        private void ViewOnRerolled(int guardianIndex)
+        {
+            var guardian = Model.GuardianList[guardianIndex];
+            RerollEvent?.Invoke(guardian);
         }
 
         private void ViewOnDiceUsed(int guardian, int dice)

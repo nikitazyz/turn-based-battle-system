@@ -35,9 +35,10 @@ namespace Core
 
             var endEvent = new EndMoveEventBus(_battle);
             var useEvent = new UseEventBus(_battle);
+            var rerollEvent = new RerollEventBus(_battle);
             
-            _battleUIBootstrapper.Initialize(_battle, endEvent, useEvent);
-            _stateMachine.AddState(new UserMoveState(guardianList, endEvent, useEvent));
+            _battleUIBootstrapper.Initialize(_battle, endEvent, useEvent, rerollEvent);
+            _stateMachine.AddState(new UserMoveState(guardianList, endEvent, useEvent, rerollEvent));
             _stateMachine.AddState(new EnemyAttackState());
             _stateMachine.ChangeState<UserMoveState>();
             foreach (GuardianCell guardianCell in guardianList)
