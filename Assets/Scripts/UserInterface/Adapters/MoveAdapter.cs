@@ -67,7 +67,7 @@ namespace UserInterface.Adapters
             var cellElements = view.GuardianCellElements;
             for (int i = 0; i < model.GuardianList.Count; i++)
             {
-                cellElements[i].Avatar = model.GuardianList[i].Guardian.Avatar;
+                cellElements[i].Avatar = model.GuardianList[i].Avatar;
                 var dices = model.GuardianList[i].Dices;
                 for (int j = 0; j < dices.Length; j++)
                 {

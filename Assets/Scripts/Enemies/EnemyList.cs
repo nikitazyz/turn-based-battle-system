@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace Enemy
+namespace Enemies
 {
     public class EnemyList : IReadOnlyList<BattleEnemy>
     {

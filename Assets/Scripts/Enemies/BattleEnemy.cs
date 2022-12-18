@@ -1,6 +1,6 @@
 using HealthSystem;
 
-namespace Enemy
+namespace Enemies
 {
     public class BattleEnemy
     {
