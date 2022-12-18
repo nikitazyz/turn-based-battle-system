@@ -7,9 +7,9 @@ namespace StateMachineSystem.BattleStateMachine
     public class UserMoveState : IState
     {
         private readonly GuardianList _guardianList;
-        private readonly EventBus[] _events;
+        private readonly IEventBus[] _events;
 
-        public UserMoveState(GuardianList guardianList, params EventBus[] events)
+        public UserMoveState(GuardianList guardianList, params IEventBus[] events)
         {
             _guardianList = guardianList;
             _events = events;

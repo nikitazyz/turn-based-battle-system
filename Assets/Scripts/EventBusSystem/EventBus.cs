@@ -2,7 +2,7 @@ using System;
 
 namespace EventBusSystem
 {
-    public abstract class EventBus
+    public abstract class EventBus : IEventBus
     {
         private bool _enabled;
         public event Action<bool> EnableStateChanged;

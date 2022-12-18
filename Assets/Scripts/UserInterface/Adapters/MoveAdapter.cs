@@ -8,12 +8,12 @@ namespace UserInterface.Adapters
 {
     public class MoveAdapter : IAdapter<MoveView, Battle>
     {
-        private EventBus _endMove;
+        private IEventBus _endMove;
         private UseEventBus _useEventBus;
         public MoveView View { get; set; }
         public Battle Model { get; set; }
 
-        public EventBus EndMove
+        public IEventBus EndMove
         {
             get => _endMove;
             set
@@ -21,12 +21,14 @@ namespace UserInterface.Adapters
                 if (_endMove != null)
                 {
                     _endMove.EnableStateChanged -= EndMoveOnEnableStateChanged;
+                    EndMoveOnEnableStateChanged(false);
                 }
 
                 _endMove = value;
                 if (_endMove != null)
                 {
                     _endMove.EnableStateChanged += EndMoveOnEnableStateChanged;
+                    EndMoveOnEnableStateChanged(_endMove.Enabled);
                 }
             }
         }
@@ -39,6 +41,7 @@ namespace UserInterface.Adapters
                 if (_useEventBus != null)
                 {
                     _useEventBus.EnableStateChanged -= UseEventBusOnEnableStateChanged;
+                    UseEventBusOnEnableStateChanged(false);
                 }
 
                 _useEventBus = value;
