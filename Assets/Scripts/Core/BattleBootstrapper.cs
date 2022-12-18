@@ -26,14 +26,10 @@ namespace Core
             _battleStatus = battleStatus;
             var guardianList = new GuardianList(new[]
             {
-                new GuardianCell(battleStatus.Guardians[0], new BattleDice(battleStatus.Dice),
-                    new BattleDice(battleStatus.Dice), new BattleDice(battleStatus.Dice)),
-                new GuardianCell(battleStatus.Guardians[1], new BattleDice(battleStatus.Dice),
-                    new BattleDice(battleStatus.Dice), new BattleDice(battleStatus.Dice)),
-                new GuardianCell(battleStatus.Guardians[2], new BattleDice(battleStatus.Dice),
-                    new BattleDice(battleStatus.Dice), new BattleDice(battleStatus.Dice)),
-                new GuardianCell(battleStatus.Guardians[3], new BattleDice(battleStatus.Dice),
-                    new BattleDice(battleStatus.Dice), new BattleDice(battleStatus.Dice)),
+                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[0], battleStatus.Dice, battleStatus.Dice, battleStatus.Dice),
+                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[1], battleStatus.Dice, battleStatus.Dice, battleStatus.Dice),
+                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[2], battleStatus.Dice, battleStatus.Dice, battleStatus.Dice),
+                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[3], battleStatus.Dice, battleStatus.Dice, battleStatus.Dice),
             });
             _battle = new Battle(_stateMachine, _battleStatus.GameSettings.Battle.MaxActions, guardianList);
 

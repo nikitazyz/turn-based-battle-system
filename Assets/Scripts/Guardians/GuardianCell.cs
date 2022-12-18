@@ -1,5 +1,6 @@
 using System.Linq;
 using Dices;
+using UnityEngine;
 
 namespace Guardians
 {
@@ -7,8 +8,7 @@ namespace Guardians
     {
         private readonly Guardian _guardian;
         private readonly BattleDice[] _dices;
-
-        public Guardian Guardian => _guardian;
+        public Sprite Avatar => _guardian.Avatar;
 
         public BattleDice[] Dices => _dices.ToArray();
 
