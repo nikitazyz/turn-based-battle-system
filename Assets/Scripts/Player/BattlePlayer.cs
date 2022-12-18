@@ -4,13 +4,13 @@ namespace Player
 {
     public class BattlePlayer
     {
-        public Player Player { get; }
+        private Player _player;
         
         public Health Health { get; }
 
         public BattlePlayer(Player player, int maxHealth, int healthValue)
         {
-            Player = player;
+            _player = player;
             Health = new Health(maxHealth, healthValue);
         }
 
