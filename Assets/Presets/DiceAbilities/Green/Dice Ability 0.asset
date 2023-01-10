@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2191365519617845222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f4d37e863a4061bca1932acc5b55c2, type: 3}
+  m_Name: NextDamageOffsetEffect
+  m_EditorClassIdentifier: 
+  _isOpen: 1
+  _damageOffset: -1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa2a3cace544f61a4c98f008b3c3068, type: 3}
+  m_Name: Dice Ability 0
+  m_EditorClassIdentifier: 
+  _image: {fileID: 21300000, guid: e523802b5d008954f80eef00a96a7071, type: 3}
+  _effects:
+  - {fileID: -2191365519617845222}
+  - {fileID: 1218796670135038408}
+--- !u!114 &1218796670135038408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acab62bd962e4fedac58798e2a9a93af, type: 3}
+  m_Name: NextDamageTypeEffect
+  m_EditorClassIdentifier: 
+  _isOpen: 1
+  _effectTargetType: 2

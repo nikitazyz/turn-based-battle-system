@@ -6,10 +6,12 @@ namespace EventBusSystem
     public class UseEventBus : ActionEventBus
     {
         private readonly Battle _battle;
+        private readonly AttackProcessor _attackProcessor;
 
-        public UseEventBus(Battle battle) : base(battle)
+        public UseEventBus(Battle battle, AttackProcessor attackProcessor) : base(battle)
         {
             _battle = battle;
+            _attackProcessor = attackProcessor;
         }
 
         public void Invoke(BattleDice battleDice)
@@ -19,7 +21,7 @@ namespace EventBusSystem
                 return;
             }
 
-            battleDice.Use();
+            _attackProcessor.UseDice(battleDice);
             Invoke();
         }
     }

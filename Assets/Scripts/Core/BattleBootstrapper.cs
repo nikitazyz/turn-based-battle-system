@@ -1,7 +1,10 @@
+using System.Linq;
 using Dices;
+using Enemies;
 using EventBusSystem;
 using Guardians;
 using Initialization;
+using PlayerSystem;
 using StateMachineSystem;
 using StateMachineSystem.BattleStateMachine;
 using UnityEngine;
@@ -17,6 +20,8 @@ namespace Core
         private BattleStatus _battleStatus;
         private Battle _battle;
 
+        private AttackProcessor _attackProcessor;
+
         private void Awake()
         {
         }
@@ -31,10 +36,16 @@ namespace Core
                 GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[2], battleStatus.Dice, battleStatus.Dice, battleStatus.Dice),
                 GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[3], battleStatus.Dice, battleStatus.Dice, battleStatus.Dice),
             });
-            _battle = new Battle(_stateMachine, _battleStatus.GameSettings.Battle.MaxActions, guardianList);
+
+            var enemyList = new EnemyList(battleStatus.Enemies.Select((enemy, i) => new BattleEnemy(enemy, 30)).ToArray());
+            var player = new BattlePlayer(battleStatus.Player, battleStatus.Player.MaxHealth,
+                battleStatus.PlayerHealth);
+            _attackProcessor = new AttackProcessor(enemyList, player);
+            
+            _battle = new Battle(_stateMachine, _battleStatus.GameSettings.Battle.MaxActions, guardianList, player);
 
             var endEvent = new EndMoveEventBus(_battle);
-            var useEvent = new UseEventBus(_battle);
+            var useEvent = new UseEventBus(_battle, _attackProcessor);
             var rerollEvent = new RerollEventBus(_battle);
             
             _battleUIBootstrapper.Initialize(_battle, endEvent, useEvent, rerollEvent);

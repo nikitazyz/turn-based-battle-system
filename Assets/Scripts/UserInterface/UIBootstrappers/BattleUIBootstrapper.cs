@@ -12,8 +12,10 @@ namespace UserInterface.UIBootstrappers
     public class BattleUIBootstrapper : UIBootstrapper, IInitializable<Battle, EndMoveEventBus, UseEventBus, RerollEventBus>
     {
         [SerializeField] private MoveView _moveView;
+        [SerializeField] private StatusView _statusView;
 
         private MoveAdapter _moveAdapter;
+        private StatusAdapter _statusAdapter;
 
         public void Initialize(Battle battle, EndMoveEventBus endMoveEvent, UseEventBus useEventBus, RerollEventBus rerollEventBus)
         {
@@ -23,6 +25,8 @@ namespace UserInterface.UIBootstrappers
                 UseEvent = useEventBus,
                 RerollEvent = rerollEventBus
             };
+
+            _statusAdapter = new StatusAdapter(_statusView, battle.Player);
         }
     }
 }

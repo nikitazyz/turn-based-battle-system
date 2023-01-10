@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e37ffb2587b4ad1840dc959099440a2, type: 3}
-  m_Name: Dice
+  m_Name: Red
   m_EditorClassIdentifier: 
   _ability0: {fileID: 11400000, guid: a99efa0ee58469649829e05ccb86c3ae, type: 2}
   _ability1: {fileID: 11400000, guid: c3c05015af84ab44eb91639b26d6a86e, type: 2}
