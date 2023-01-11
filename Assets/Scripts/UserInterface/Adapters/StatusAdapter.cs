@@ -41,7 +41,7 @@ namespace UserInterface.Adapters
 
         private void HealthOnValueChanged(int value)
         {
-            View.SetHealth(value, Model.Health.MaxValue);
+            View.SetHealth(Model.Health.MaxValue, value);
         }
     }
 }
