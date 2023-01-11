@@ -41,7 +41,7 @@ namespace Dices
             }
             
             _battlePlayer.Health.Heal(attackStatus.Heal);
-            _battlePlayer.Health.TakeDamage(attackStatus.Damage);
+            _battlePlayer.Health.TakeDamage(attackStatus.SelfDamage);
         }
     }
 }
