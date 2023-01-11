@@ -7,16 +7,36 @@ namespace UserInterface.Adapters
 {
     public class StatusAdapter : IAdapter<StatusView, BattlePlayer>
     {
-        public StatusView View { get; set; }
-        public BattlePlayer Model { get; set; }
+        private BattlePlayer _model;
+        public StatusView View { get; }
+
+        public BattlePlayer Model
+        {
+            get => _model;
+            set
+            {
+                if (_model != null)
+                {
+                    _model.Health.ValueChanged -= HealthOnValueChanged;
+                }
+                _model = value;
+                if (_model != null)
+                {
+                    _model.Health.ValueChanged += HealthOnValueChanged;
+                }
+                OnPlayerUpdated(value);
+            }
+        }
+
+        private void OnPlayerUpdated(BattlePlayer player)
+        {
+            View.SetHealth(player.Health.MaxValue, player.Health.Value);
+        }
 
         public StatusAdapter(StatusView view, BattlePlayer model)
         {
             View = view;
             Model = model;
-            
-            model.Health.ValueChanged += HealthOnValueChanged;
-            View.SetHealth(model.Health.Value, model.Health.MaxValue);
         }
 
         private void HealthOnValueChanged(int value)

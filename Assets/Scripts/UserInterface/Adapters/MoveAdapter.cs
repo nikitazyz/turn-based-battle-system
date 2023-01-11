@@ -11,7 +11,7 @@ namespace UserInterface.Adapters
         private IEventBus _endMove;
         private UseEventBus _useEventBus;
         private RerollEventBus _rerollEventBus;
-        public MoveView View { get; set; }
+        public MoveView View { get; }
         public Battle Model { get; set; }
 
         public IEventBus EndMove
