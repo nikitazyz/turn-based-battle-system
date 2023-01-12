@@ -1,3 +1,6 @@
+// ReSharper disable UnusedType.Global
+// ReSharper disable UnusedMember.Global
+// ReSharper disable UnusedMemberInSuper.Global
 namespace Initialization
 {
     public interface IInitializable<in T>

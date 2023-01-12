@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Battle>k__BackingField:
     <BattleScene>k__BackingField: Assets/Scenes/BattleScene.unity
-    <MaxActions>k__BackingField: 3
+    <MaxActions>k__BackingField: 5

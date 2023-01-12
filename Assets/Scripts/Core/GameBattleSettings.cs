@@ -1,7 +1,6 @@
 using System;
 using SceneLoadSystem;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Core
 {

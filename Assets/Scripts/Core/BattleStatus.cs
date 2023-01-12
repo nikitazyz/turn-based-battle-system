@@ -10,15 +10,13 @@ namespace Core
         public GameSettings GameSettings { get; }
 
         public Guardian[] Guardians { get; }
-        public Dice Dice { get; }
         public Enemy[] Enemies { get; }
         public Player Player { get; }
         public int PlayerHealth { get; }
 
-        public BattleStatus(GameSettings gameSettings, Guardian[] guardians, Dice dice, Enemy[] enemies, Player player, int playerHealth)
+        public BattleStatus(GameSettings gameSettings, Guardian[] guardians, Enemy[] enemies, Player player, int playerHealth)
         {
             Guardians = guardians;
-            Dice = dice;
             Enemies = enemies;
             Player = player;
             PlayerHealth = playerHealth;

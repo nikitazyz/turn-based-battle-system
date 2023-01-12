@@ -1,4 +1,3 @@
-using System;
 using SceneLoadSystem;
 using UnityEngine;
 using UnityEngine.UI;
