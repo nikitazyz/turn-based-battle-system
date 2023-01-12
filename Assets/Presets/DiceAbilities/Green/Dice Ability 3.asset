@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1706999052289948627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3f6fbe195144c0899d3404e40775ea, type: 3}
+  m_Name: PoisonEffect
+  m_EditorClassIdentifier: 
+  _isOpen: 1
+  _damage: 2
+--- !u!114 &-1171893148259050786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e547674dd3d249b4b8e68e4563b4a57d, type: 3}
+  m_Name: SelfPoisonEffect
+  m_EditorClassIdentifier: 
+  _isOpen: 1
+  _damage: 2
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa2a3cace544f61a4c98f008b3c3068, type: 3}
+  m_Name: Dice Ability 3
+  m_EditorClassIdentifier: 
+  _image: {fileID: 21300000, guid: b978c8f65da53cf4ea9221933b1efc59, type: 3}
+  _effects:
+  - {fileID: -1706999052289948627}
+  - {fileID: -1171893148259050786}

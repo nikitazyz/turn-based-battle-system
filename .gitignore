@@ -69,3 +69,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+.idea/.idea.Turn Based Battle System/.idea/indexLayout.xml
+.idea/.idea.Turn Based Battle System/.idea/vcs.xml
+
+/Assets/Textures/Characters/**/Huge/
+/Assets/Textures/Characters/**/Huge.meta
+
