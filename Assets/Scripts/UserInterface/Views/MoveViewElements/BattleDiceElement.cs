@@ -10,11 +10,18 @@ namespace UserInterface.Views.MoveViewElements
         
         [SerializeField] private Image _image;
         [SerializeField] private Button _battleDiceUseButton;
+        [SerializeField] private Image _fireFrame;
 
         public bool Enabled
         {
             get => _image.gameObject.activeSelf;
             set => _image.gameObject.SetActive(value);
+        }
+
+        public bool FireFrameEnabled
+        {
+            get => _fireFrame.enabled;
+            set => _fireFrame.enabled = value;
         }
 
         public Sprite Image

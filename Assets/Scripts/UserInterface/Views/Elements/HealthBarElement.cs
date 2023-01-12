@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -61,7 +60,7 @@ namespace UserInterface.Views.Elements
 
         IEnumerator SecondaryUpdate()
         {
-            while (Mathf.Abs(_secondaryBar.fillAmount - _bar.fillAmount) > 0.05f)
+            while (Mathf.Abs(_secondaryBar.fillAmount - _bar.fillAmount) > 0.01f)
             {
                 _secondaryBar.fillAmount = Mathf.Lerp(_secondaryBar.fillAmount, _bar.fillAmount, Time.deltaTime * _secondaryBarSpeed);
                 yield return null;
