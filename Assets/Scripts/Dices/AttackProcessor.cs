@@ -10,6 +10,8 @@ namespace Dices
         private readonly EnemyList _enemyList;
         private readonly BattlePlayer _battlePlayer;
 
+        private EffectTargetType _effectTargetType;
+
         public AttackProcessor(EnemyList enemyList, BattlePlayer battlePlayer)
         {
             _enemyList = enemyList;
@@ -27,14 +29,16 @@ namespace Dices
 
         private void Attack(AttackStatus attackStatus)
         {
-            BattleEnemy[] enemies = attackStatus.EffectTargetType switch
+            BattleEnemy[] enemies = _effectTargetType switch
             {
-                EffectTargetType.First => new[] { _enemyList[0] },
-                EffectTargetType.Last => new[] { _enemyList[^1] },
-                EffectTargetType.All => _enemyList.ToArray(),
+                EffectTargetType.First => new[] { _enemyList.FirstAlive },
+                EffectTargetType.Last => new[] { _enemyList.LastAlive },
+                EffectTargetType.All => _enemyList.AllAlive.ToArray(),
                 _ => throw new ArgumentOutOfRangeException()
             };
 
+            _effectTargetType = attackStatus.EffectTargetType;
+            
             foreach (var battleEnemy in enemies)
             {
                 battleEnemy.Health.TakeDamage(attackStatus.Damage);

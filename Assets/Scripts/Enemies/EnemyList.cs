@@ -26,5 +26,9 @@ namespace Enemies
         public int Count => _battleEnemies.Count;
 
         public BattleEnemy this[int index] => _battleEnemies[index];
+
+        public BattleEnemy FirstAlive => _battleEnemies.FirstOrDefault(en => en.Health.Value > 0);
+        public BattleEnemy LastAlive => _battleEnemies.LastOrDefault(en => en.Health.Value > 0);
+        public IList<BattleEnemy> AllAlive => _battleEnemies.Where(en => en.Health.Value > 0).ToList();
     }
 }
