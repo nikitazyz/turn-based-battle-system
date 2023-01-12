@@ -1,8 +1,9 @@
+using CharacterSystem;
 using HealthSystem;
 
 namespace Enemies
 {
-    public class BattleEnemy
+    public class BattleEnemy : ICharacter
     {
         public Enemy Enemy { get; }
 

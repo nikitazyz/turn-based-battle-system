@@ -1,8 +1,9 @@
+using CharacterSystem;
 using HealthSystem;
 
 namespace PlayerSystem
 {
-    public class BattlePlayer
+    public class BattlePlayer: ICharacter
     {
         private Player _player;
         
