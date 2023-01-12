@@ -1,16 +1,13 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Guardians;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UserInterface.Core;
 using UserInterface.Views.MoveViewElements;
 
 namespace UserInterface.Views
 {
-    public class MoveView : MonoBehaviour, IView
+    public class MoveView : MonoBehaviour
     {
         public event Action EndMoveClicked;
         public event Action<int, int> DiceUsed; 

@@ -1,139 +1,123 @@
 using System;
 using Core;
-using EventBusSystem;
-using UserInterface.Core;
+using Dices;
+using StateMachineSystem;
+using StateMachineSystem.BattleStateMachine;
 using UserInterface.Views;
+using UserInterface.Views.MoveViewElements;
 
 namespace UserInterface.Adapters
 {
-    public class MoveAdapter : IAdapter<MoveView, Battle>
+    public class MoveAdapter
     {
-        private IEventBus _endMove;
-        private UseEventBus _useEventBus;
-        private RerollEventBus _rerollEventBus;
-        public MoveView View { get; }
-        public Battle Model { get; set; }
+        private readonly StateMachine _stateMachine;
+        private MoveView View { get; }
+        private Battle Battle { get; }
 
-        public IEventBus EndMove
-        {
-            get => _endMove;
-            set
-            {
-                if (_endMove != null)
-                {
-                    _endMove.EnableStateChanged -= EndMoveOnEnableStateChanged;
-                    EndMoveOnEnableStateChanged(false);
-                }
-
-                _endMove = value;
-                if (_endMove != null)
-                {
-                    _endMove.EnableStateChanged += EndMoveOnEnableStateChanged;
-                    EndMoveOnEnableStateChanged(_endMove.Enabled);
-                }
-            }
-        }
-
-        public UseEventBus UseEvent
-        {
-            get => _useEventBus;
-            set
-            {
-                if (_useEventBus != null)
-                {
-                    _useEventBus.EnableStateChanged -= UseEventBusOnEnableStateChanged;
-                    UseEventBusOnEnableStateChanged(false);
-                }
-
-                _useEventBus = value;
-
-                if (_useEventBus != null)
-                {
-                    _useEventBus.EnableStateChanged += UseEventBusOnEnableStateChanged;
-                    UseEventBusOnEnableStateChanged(_useEventBus.Enabled);
-                }
-            }
-        }
-        
-        public RerollEventBus RerollEvent
-        {
-            get => _rerollEventBus;
-            set
-            {
-                if (_rerollEventBus != null)
-                {
-                    _rerollEventBus.EnableStateChanged -= RerollEventBusOnEnableStateChanged;
-                    RerollEventBusOnEnableStateChanged(false);
-                }
-
-                _rerollEventBus = value;
-
-                if (_rerollEventBus != null)
-                {
-                    _rerollEventBus.EnableStateChanged += RerollEventBusOnEnableStateChanged;
-                    RerollEventBusOnEnableStateChanged(_rerollEventBus.Enabled);
-                }
-            }
-        }
-
-        private void RerollEventBusOnEnableStateChanged(bool obj)
-        {
-            
-        }
-
-        private void UseEventBusOnEnableStateChanged(bool obj)
-        {
-            
-        }
+        private bool _isMoveState;
 
         public MoveAdapter(MoveView view, Battle model)
         {
+            _stateMachine = model.StateMachine;
+            _stateMachine.StateChanged += OnStateChanged;
             View = view;
-            Model = model;
+            Battle = model;
 
-            model.Acted += () => view.SetActions(model.Actions, model.MaxActions);
+            model.Acted += UpdateActionView;
+            UpdateActionView();
 
             View.EndMoveClicked += ViewOnEndMoveClicked;
             
-            var cellElements = view.GuardianCellElements;
-            for (int i = 0; i < model.GuardianList.Count; i++)
-            {
-                cellElements[i].Avatar = model.GuardianList[i].Avatar;
-                var dices = model.GuardianList[i].Dices;
-                for (int j = 0; j < dices.Length; j++)
-                {
-                    var i1 = i;
-                    var j1 = j;
-                    dices[j].Rerolled += rerollSide =>
-                        cellElements[i1].BattleDiceElements[j1].Image = dices[j1].DiceAbility().Image;
-                    dices[j].Used += () => cellElements[i1].BattleDiceElements[j1].Enabled = false;
-                    dices[j].Reseted += () => cellElements[i1].BattleDiceElements[j1].Enabled = true;
-                }
-            }
+            InitializeGuardianCells();
+            
             view.DiceUsed += ViewOnDiceUsed;
             view.Rerolled += ViewOnRerolled;
         }
 
+        private void OnStateChanged(Type state)
+        {
+            _isMoveState = state == typeof(UserMoveState);
+            UpdateView();
+        }
+
+        private void InitializeGuardianCells()
+        {
+            var cellElements = View.GuardianCellElements;
+            for (int i = 0; i < Battle.GuardianList.Count; i++)
+            {
+                cellElements[i].Avatar = Battle.GuardianList[i].Avatar;
+                var dices = Battle.GuardianList[i].Dices;
+                RegisterOnDiceEvents(dices, cellElements[i]);
+            }
+        }
+
+        private static void RegisterOnDiceEvents(BattleDice[] dices, GuardianCellElement cellElement)
+        {
+            for (int j = 0; j < dices.Length; j++)
+            {
+                BattleDiceElement diceElement = cellElement.BattleDiceElements[j];
+                BattleDice dice = dices[j];
+                
+                dices[j].Rerolled += _ => OnRerolled(dice, diceElement);
+                dices[j].Used += () => OnUsed(diceElement);
+                dices[j].Reseted += () => OnReseted(diceElement);
+            }
+        }
+
+        #region Dice Events Handlers
+
+        private static void OnRerolled(BattleDice dice, BattleDiceElement diceElement) => diceElement.Image = dice.DiceAbility().Image;
+
+        private static void OnUsed(BattleDiceElement diceElement) => diceElement.Enabled = false;
+
+        private static void OnReseted(BattleDiceElement diceElement) => diceElement.Enabled = true;
+
+        #endregion
+
+        #region View Update
+
+        private void UpdateView()
+        {
+            View.EndMoveButtonActiveState = _isMoveState;
+            foreach (var cellElement in View.GuardianCellElements)
+            {
+                foreach (var diceElement in cellElement.BattleDiceElements)
+                {
+                    diceElement.Enabled = _isMoveState;
+                }
+
+                cellElement.RerollButtonEnabled = _isMoveState;
+            }
+            UpdateActionView();
+        }
+        
+        private void UpdateActionView()
+        {
+            View.SetActions(Battle.Actions, Battle.MaxActions);
+        }
+
+        #endregion
+
+        #region View Events Handlers
+
         private void ViewOnRerolled(int guardianIndex)
         {
-            var guardian = Model.GuardianList[guardianIndex];
-            RerollEvent?.Invoke(guardian);
+            var guardian = Battle.GuardianList[guardianIndex];
+            Battle.RerollDices(guardian);
         }
 
         private void ViewOnDiceUsed(int guardian, int dice)
         {
-            var battleDice = Model.GuardianList[guardian].Dices[dice];
-            _useEventBus?.Invoke(battleDice);
-        }
-
-        private void EndMoveOnEnableStateChanged(bool state)
-        {
-            View.EndMoveButtonActiveState = state;
+            var battleDice = Battle.GuardianList[guardian].Dices[dice];
+            Battle.UseDice(battleDice);
         }
 
         private void ViewOnEndMoveClicked()
         {
-            EndMove?.Invoke();
+            Battle.EndMove();
         }
+
+        #endregion
+        
     }
 }

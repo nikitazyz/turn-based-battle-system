@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 2917074748999715315}
   _battleDiceUseButton: {fileID: 447149851887445877}
+  _fireFrame: {fileID: 5091333837823604583}
 --- !u!1 &2382663326282806295
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5905259333104856228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -268,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3784955276938491154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -465,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5091333837823604576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1026,6 +1027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 1883215881258838031}
   _battleDiceUseButton: {fileID: 776493208056736786}
+  _fireFrame: {fileID: 1784454905963726008}
 --- !u!1 &5870002836881117743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 1942949052587066955}
   _battleDiceUseButton: {fileID: 1267992295547487886}
+  _fireFrame: {fileID: 4815648620093481866}
 --- !u!1 &6871238350326926864
 GameObject:
   m_ObjectHideFlags: 0

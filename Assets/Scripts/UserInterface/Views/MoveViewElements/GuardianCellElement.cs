@@ -21,6 +21,12 @@ namespace UserInterface.Views.MoveViewElements
         }
         public BattleDiceElement[] BattleDiceElements => _battleDiceElements.ToArray();
 
+        public bool RerollButtonEnabled
+        {
+            get => _rerollButton.interactable;
+            set => _rerollButton.interactable = value;
+        }
+
         private void Awake()
         {
             for (var i = 0; i < _battleDiceElements.Length; i++)

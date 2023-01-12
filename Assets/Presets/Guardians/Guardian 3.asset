@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Guardian 3
   m_EditorClassIdentifier: 
   _avatar: {fileID: 21300000, guid: 10097840cc7edd545932858ac5563575, type: 3}
+  _dice: {fileID: 11400000, guid: ac7b87fc3b94d3d47ae507438d854d2f, type: 2}

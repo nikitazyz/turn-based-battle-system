@@ -1,10 +1,9 @@
 using TMPro;
 using UnityEngine;
-using UserInterface.Core;
 
 namespace UserInterface.Views
 {
-    public class StatusView : MonoBehaviour, IView
+    public class StatusView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _health;
 

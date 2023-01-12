@@ -1,4 +1,3 @@
-using EventBusSystem;
 using Guardians;
 using UnityEngine;
 
@@ -7,12 +6,10 @@ namespace StateMachineSystem.BattleStateMachine
     public class UserMoveState : IState
     {
         private readonly GuardianList _guardianList;
-        private readonly IEventBus[] _events;
 
-        public UserMoveState(GuardianList guardianList, params IEventBus[] events)
+        public UserMoveState(GuardianList guardianList)
         {
             _guardianList = guardianList;
-            _events = events;
         }
         
         public void Enter()
@@ -22,19 +19,10 @@ namespace StateMachineSystem.BattleStateMachine
             {
                 guardianCell.ResetDices();
             }
-
-            foreach (var eventBus in _events)
-            {
-                eventBus.Enabled = true;
-            }
         }
 
         public void Exit()
         {
-            foreach (var eventBus in _events)
-            {
-                eventBus.Enabled = false;
-            }
 
         }
     }

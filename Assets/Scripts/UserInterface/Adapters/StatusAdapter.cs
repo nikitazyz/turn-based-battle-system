@@ -1,47 +1,25 @@
-using Core;
 using PlayerSystem;
-using UserInterface.Core;
 using UserInterface.Views;
 
 namespace UserInterface.Adapters
 {
-    public class StatusAdapter : IAdapter<StatusView, BattlePlayer>
+    public class StatusAdapter
     {
-        private BattlePlayer _model;
-        public StatusView View { get; }
-
-        public BattlePlayer Model
-        {
-            get => _model;
-            set
-            {
-                if (_model != null)
-                {
-                    _model.Health.ValueChanged -= HealthOnValueChanged;
-                }
-                _model = value;
-                if (_model != null)
-                {
-                    _model.Health.ValueChanged += HealthOnValueChanged;
-                }
-                OnPlayerUpdated(value);
-            }
-        }
-
-        private void OnPlayerUpdated(BattlePlayer player)
-        {
-            View.SetHealth(player.Health.MaxValue, player.Health.Value);
-        }
+        private StatusView View { get; }
+        private BattlePlayer BattlePlayer { get; }
 
         public StatusAdapter(StatusView view, BattlePlayer model)
         {
             View = view;
-            Model = model;
+            BattlePlayer = model;
+            
+            View.SetHealth(BattlePlayer.Health.MaxValue, BattlePlayer.Health.Value);
+            BattlePlayer.Health.ValueChanged += HealthOnValueChanged;
         }
 
         private void HealthOnValueChanged(int value)
         {
-            View.SetHealth(Model.Health.MaxValue, value);
+            View.SetHealth(BattlePlayer.Health.MaxValue, value);
         }
     }
 }
