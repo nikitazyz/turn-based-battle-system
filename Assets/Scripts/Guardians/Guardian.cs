@@ -1,3 +1,4 @@
+using Dices;
 using UnityEngine;
 
 namespace Guardians
@@ -7,5 +8,8 @@ namespace Guardians
     {
         [SerializeField] private Sprite _avatar;
         public Sprite Avatar => _avatar;
+
+        [SerializeField] private Dice _dice;
+        public Dice Dice => _dice;
     }
 }
