@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GalshataiIdle
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 7be2e8f8c5ce53345a2b4e8c5e1890c1, type: 3}
+    - {fileID: 2800000, guid: 4af2a00bccb25b74fa681780f4341679, type: 3}
+    - {fileID: 2800000, guid: f2ed379473efd944ea4754bb65b97689, type: 3}
+    - {fileID: 2800000, guid: 26d49d47dba8734409fde444f46a5b9a, type: 3}
+    - {fileID: 2800000, guid: 0d23b9c9c463bb440b29b2346a28fa9c, type: 3}
+    - {fileID: 2800000, guid: 9b79b089ffbab8448804b969c11c71a1, type: 3}
+    - {fileID: 2800000, guid: 802bdf9c871e54d448c553b4f0f33157, type: 3}
+    - {fileID: 2800000, guid: d1c0471eb99f6b848a3442a137025243, type: 3}
+    - {fileID: 2800000, guid: c18da81d3ae1cf246808b6229ff86e09, type: 3}
+    - {fileID: 2800000, guid: d74635cef210a1249bb9a8e6b2064fd5, type: 3}
+    - {fileID: 2800000, guid: 5775d6614eb80fc409cd47ac1d33de4e, type: 3}
+    - {fileID: 2800000, guid: 81f393ea02e89234f8c5f96046b675b2, type: 3}
+    - {fileID: 2800000, guid: 9cc18fb5855ce8047a65509ca7e1f032, type: 3}
+    - {fileID: 2800000, guid: 9f7052fbfe2e97e4ca34761c21641127, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5775d6614eb80fc409cd47ac1d33de4e, type: 3}
+  - {fileID: 21300000, guid: f2ed379473efd944ea4754bb65b97689, type: 3}
+  - {fileID: 21300000, guid: 9cc18fb5855ce8047a65509ca7e1f032, type: 3}
+  - {fileID: 21300000, guid: 26d49d47dba8734409fde444f46a5b9a, type: 3}
+  - {fileID: 21300000, guid: 7be2e8f8c5ce53345a2b4e8c5e1890c1, type: 3}
+  - {fileID: 21300000, guid: 9b79b089ffbab8448804b969c11c71a1, type: 3}
+  - {fileID: 21300000, guid: 0d23b9c9c463bb440b29b2346a28fa9c, type: 3}
+  - {fileID: 21300000, guid: 81f393ea02e89234f8c5f96046b675b2, type: 3}
+  - {fileID: 21300000, guid: 4af2a00bccb25b74fa681780f4341679, type: 3}
+  - {fileID: 21300000, guid: 9f7052fbfe2e97e4ca34761c21641127, type: 3}
+  - {fileID: 21300000, guid: 802bdf9c871e54d448c553b4f0f33157, type: 3}
+  - {fileID: 21300000, guid: c18da81d3ae1cf246808b6229ff86e09, type: 3}
+  - {fileID: 21300000, guid: d1c0471eb99f6b848a3442a137025243, type: 3}
+  - {fileID: 21300000, guid: d74635cef210a1249bb9a8e6b2064fd5, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 1244
+  - 1236
+  - 1246
+  - 1237
+  - 1234
+  - 1239
+  - 1238
+  - 1245
+  - 1235
+  - 1247
+  - 1240
+  - 1242
+  - 1241
+  - 1243
+  m_RenderDataMap: {}
+  m_Tag: GalshataiIdle
+  m_IsVariant: 0

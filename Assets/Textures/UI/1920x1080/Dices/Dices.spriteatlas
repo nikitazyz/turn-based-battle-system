@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dices
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4226c466316be554e99c0eef64aa9962, type: 3}
+    - {fileID: 2800000, guid: af0c4bbf73ba2a7458fdba7732f92568, type: 3}
+    - {fileID: 2800000, guid: af49b9d19952e6b4c846023573c0ebc1, type: 3}
+    - {fileID: 2800000, guid: ed3a9daf95e0a404f8f9a4f50c28bc21, type: 3}
+    - {fileID: 2800000, guid: bfabefdb0ed22964ea3145481cb6fe8e, type: 3}
+    - {fileID: 2800000, guid: c3f32791f4c365348a12d9206b789d2e, type: 3}
+    - {fileID: 2800000, guid: 1957c62b10b8b0843bb16e835d041c10, type: 3}
+    - {fileID: 2800000, guid: 2e5231e7a7b144047b15ac9a66c985ea, type: 3}
+    - {fileID: 2800000, guid: b7098c0d59b2758478d2c139ade3f935, type: 3}
+    - {fileID: 2800000, guid: e523802b5d008954f80eef00a96a7071, type: 3}
+    - {fileID: 2800000, guid: 003aa9da12aee7e4d94fa59c50aebd5b, type: 3}
+    - {fileID: 2800000, guid: 824e38fe22147814e8779c8ad8f86f15, type: 3}
+    - {fileID: 2800000, guid: b8730758cbb952343a3977e8af8f9012, type: 3}
+    - {fileID: 2800000, guid: b978c8f65da53cf4ea9221933b1efc59, type: 3}
+    - {fileID: 2800000, guid: 1e39c2bed79b4f94c852799d50057025, type: 3}
+    - {fileID: 2800000, guid: f5e808f7c71df5d4e9f4389ad8495e6c, type: 3}
+    - {fileID: 2800000, guid: 75c52ffff364ad849b21a97b6b741f3d, type: 3}
+    - {fileID: 2800000, guid: 769799471d0cc9d4b82d9a8517ac0232, type: 3}
+    - {fileID: 2800000, guid: afc60a7583391334b89d18706040a021, type: 3}
+    - {fileID: 2800000, guid: c72e883039e0e1d4aa72da5deee7d645, type: 3}
+    - {fileID: 2800000, guid: c2ac59faa57b4e246976aaa2cdf25f05, type: 3}
+    - {fileID: 2800000, guid: 60807632d3b226245874aca46d870006, type: 3}
+    - {fileID: 2800000, guid: 560c44c5820bab947beba791f72f22e4, type: 3}
+    - {fileID: 2800000, guid: 6cb0c4d7001d3ae48ad11d21ec7f46e9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c72e883039e0e1d4aa72da5deee7d645, type: 3}
+  - {fileID: 21300000, guid: c3f32791f4c365348a12d9206b789d2e, type: 3}
+  - {fileID: 21300000, guid: af49b9d19952e6b4c846023573c0ebc1, type: 3}
+  - {fileID: 21300000, guid: 60807632d3b226245874aca46d870006, type: 3}
+  - {fileID: 21300000, guid: afc60a7583391334b89d18706040a021, type: 3}
+  - {fileID: 21300000, guid: 560c44c5820bab947beba791f72f22e4, type: 3}
+  - {fileID: 21300000, guid: 4226c466316be554e99c0eef64aa9962, type: 3}
+  - {fileID: 21300000, guid: b978c8f65da53cf4ea9221933b1efc59, type: 3}
+  - {fileID: 21300000, guid: 769799471d0cc9d4b82d9a8517ac0232, type: 3}
+  - {fileID: 21300000, guid: 6cb0c4d7001d3ae48ad11d21ec7f46e9, type: 3}
+  - {fileID: 21300000, guid: 2e5231e7a7b144047b15ac9a66c985ea, type: 3}
+  - {fileID: 21300000, guid: f5e808f7c71df5d4e9f4389ad8495e6c, type: 3}
+  - {fileID: 21300000, guid: b8730758cbb952343a3977e8af8f9012, type: 3}
+  - {fileID: 21300000, guid: 003aa9da12aee7e4d94fa59c50aebd5b, type: 3}
+  - {fileID: 21300000, guid: c2ac59faa57b4e246976aaa2cdf25f05, type: 3}
+  - {fileID: 21300000, guid: e523802b5d008954f80eef00a96a7071, type: 3}
+  - {fileID: 21300000, guid: 1957c62b10b8b0843bb16e835d041c10, type: 3}
+  - {fileID: 21300000, guid: bfabefdb0ed22964ea3145481cb6fe8e, type: 3}
+  - {fileID: 21300000, guid: b7098c0d59b2758478d2c139ade3f935, type: 3}
+  - {fileID: 21300000, guid: 1e39c2bed79b4f94c852799d50057025, type: 3}
+  - {fileID: 21300000, guid: 824e38fe22147814e8779c8ad8f86f15, type: 3}
+  - {fileID: 21300000, guid: ed3a9daf95e0a404f8f9a4f50c28bc21, type: 3}
+  - {fileID: 21300000, guid: af0c4bbf73ba2a7458fdba7732f92568, type: 3}
+  - {fileID: 21300000, guid: 75c52ffff364ad849b21a97b6b741f3d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Group 57760
+  - Group 57712
+  - Group 55
+  - Group 57799
+  - Group 57750
+  - Group 57800
+  - Group 53
+  - Group 57744
+  - Group 57749
+  - Group 57810
+  - Group 57728
+  - Group 57746
+  - Group 57742
+  - Group 57738
+  - Group 57798
+  - Group 57735
+  - Group 57713
+  - Group 57711
+  - Group 57732
+  - Group 57745
+  - Group 57739
+  - Group 57704
+  - Group 54
+  - Group 57747
+  m_RenderDataMap: {}
+  m_Tag: Dices
+  m_IsVariant: 0
