@@ -1,4 +1,5 @@
 using System.Linq;
+using CoroutineManagement;
 using Dices;
 using Enemies;
 using Guardians;
@@ -19,6 +20,9 @@ namespace Core
         private Battle _battle;
 
         private AttackProcessor _attackProcessor;
+        private CoroutineService _coroutineService;
+
+        private EnemyAttack _enemyAttack;
 
         public void Initialize(BattleStatus battleStatus)
         {
@@ -31,8 +35,13 @@ namespace Core
                 GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[2]),
                 GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[3]),
             });
+            _coroutineService = CoroutineService.CreateInstance();
 
             var enemyList = new EnemyList(battleStatus.Enemies.Select((enemy, _) => new BattleEnemy(enemy, 5)).ToArray());
+            _enemyAttack = new EnemyAttack(_coroutineService, enemyList);
+
+            _enemyAttack.AllEnemyAttacked += () => _stateMachine.ChangeState<UserMoveState>();
+            
             var player = new BattlePlayer(battleStatus.Player, battleStatus.Player.MaxHealth,
                 battleStatus.PlayerHealth);
             _attackProcessor = new AttackProcessor(enemyList, player);
@@ -41,7 +50,7 @@ namespace Core
 
             _battleUIBootstrapper.Initialize(_battle);
             _stateMachine.AddState(new UserMoveState(guardianList));
-            _stateMachine.AddState(new EnemyAttackState());
+            _stateMachine.AddState(new EnemyAttackState(_enemyAttack));
             _stateMachine.ChangeState<UserMoveState>();
             foreach (GuardianCell guardianCell in guardianList)
             {
