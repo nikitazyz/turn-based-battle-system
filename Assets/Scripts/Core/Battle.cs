@@ -19,7 +19,6 @@ namespace Core
         public EnemyList EnemyList { get; }
         public StateMachine StateMachine { get; }
         
-
         private readonly AttackProcessor _attackProcessor;
         
 
@@ -46,7 +45,7 @@ namespace Core
 
         public void UseDice(BattleDice battleDice)
         {
-            if (StateMachine.CurrentState != typeof(UserMoveState))
+            if (!CanAct())
             {
                 return;
             }
@@ -56,7 +55,7 @@ namespace Core
 
         public void RerollDices(GuardianCell guardianCell)
         {
-            if (StateMachine.CurrentState != typeof(UserMoveState))
+            if (!CanAct())
             {
                 return;
             }
@@ -64,15 +63,16 @@ namespace Core
             Act();
         }
 
+        public bool CanAct()
+        {
+            return StateMachine.CurrentState == typeof(UserMoveState) && Actions != 0;
+        }
+
         public void Act()
         {
-            if (StateMachine.CurrentState != typeof(UserMoveState))
+            if (!CanAct())
             {
                 return;
-            }
-            if (Actions == 0)
-            {
-                throw new InvalidOperationException("No actions left");
             }
             Actions--;
             Acted?.Invoke();
