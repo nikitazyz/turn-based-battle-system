@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: IlnaraIdle
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 812242a8cd288ab43ace98f89114d9ac, type: 3}
+    - {fileID: 2800000, guid: 947837ef68e68654c86e87e41e736e9b, type: 3}
+    - {fileID: 2800000, guid: 8c04db649ac1c7945b409a939266b4a2, type: 3}
+    - {fileID: 2800000, guid: 6009c64dfa304214589a36e20878fa0a, type: 3}
+    - {fileID: 2800000, guid: a999e352ea61b324095dc32277c1bc0f, type: 3}
+    - {fileID: 2800000, guid: 402230645b4e28344b0914abfc46e795, type: 3}
+    - {fileID: 2800000, guid: 44fbece41667d5c4ca16746d2fd7ec50, type: 3}
+    - {fileID: 2800000, guid: df962e488a1e83f40b14334c03ac13bb, type: 3}
+    - {fileID: 2800000, guid: 431d2a4984d3ba048bff8d14fa76660a, type: 3}
+    - {fileID: 2800000, guid: 6e137478df6e53941b8ff9155475e40a, type: 3}
+    - {fileID: 2800000, guid: c04ee8235c73a64499b1789108fbd130, type: 3}
+    - {fileID: 2800000, guid: 5b6dd1d1f45e4b84e9ac29ec40ac6c84, type: 3}
+    - {fileID: 2800000, guid: 94376bc7fa0fef040a54bacdcfdd6490, type: 3}
+    - {fileID: 2800000, guid: 9778d07e8aa36a240a04aeea64141799, type: 3}
+    - {fileID: 2800000, guid: 6303a88dd04b69247a48c9251ab8af10, type: 3}
+    - {fileID: 2800000, guid: 8f96d9e4d033bca45b9ee014d98f9ec8, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5b6dd1d1f45e4b84e9ac29ec40ac6c84, type: 3}
+  - {fileID: 21300000, guid: a999e352ea61b324095dc32277c1bc0f, type: 3}
+  - {fileID: 21300000, guid: c04ee8235c73a64499b1789108fbd130, type: 3}
+  - {fileID: 21300000, guid: 402230645b4e28344b0914abfc46e795, type: 3}
+  - {fileID: 21300000, guid: 8c04db649ac1c7945b409a939266b4a2, type: 3}
+  - {fileID: 21300000, guid: 8f96d9e4d033bca45b9ee014d98f9ec8, type: 3}
+  - {fileID: 21300000, guid: 44fbece41667d5c4ca16746d2fd7ec50, type: 3}
+  - {fileID: 21300000, guid: 94376bc7fa0fef040a54bacdcfdd6490, type: 3}
+  - {fileID: 21300000, guid: df962e488a1e83f40b14334c03ac13bb, type: 3}
+  - {fileID: 21300000, guid: 6e137478df6e53941b8ff9155475e40a, type: 3}
+  - {fileID: 21300000, guid: 812242a8cd288ab43ace98f89114d9ac, type: 3}
+  - {fileID: 21300000, guid: 431d2a4984d3ba048bff8d14fa76660a, type: 3}
+  - {fileID: 21300000, guid: 6009c64dfa304214589a36e20878fa0a, type: 3}
+  - {fileID: 21300000, guid: 6303a88dd04b69247a48c9251ab8af10, type: 3}
+  - {fileID: 21300000, guid: 9778d07e8aa36a240a04aeea64141799, type: 3}
+  - {fileID: 21300000, guid: 947837ef68e68654c86e87e41e736e9b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - main_character_animation_2_2_00011
+  - main_character_animation_2_2_00004
+  - main_character_animation_2_2_00010
+  - main_character_animation_2_2_00005
+  - main_character_animation_2_2_00002
+  - main_character_animation_2_2_00015
+  - main_character_animation_2_2_00006
+  - main_character_animation_2_2_00012
+  - main_character_animation_2_2_00007
+  - main_character_animation_2_2_00009
+  - main_character_animation_2_2_00000
+  - main_character_animation_2_2_00008
+  - main_character_animation_2_2_00003
+  - main_character_animation_2_2_00014
+  - main_character_animation_2_2_00013
+  - main_character_animation_2_2_00001
+  m_RenderDataMap: {}
+  m_Tag: IlnaraIdle
+  m_IsVariant: 0

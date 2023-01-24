@@ -9,7 +9,7 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 
 [CustomEditor(typeof(DiceAbility))]
-public class AbilityEffectListPropertyDrawer : UnityEditor.Editor
+public class AbilityEffectListPropertyDrawer : Editor
 {
 
     private string assetPath;

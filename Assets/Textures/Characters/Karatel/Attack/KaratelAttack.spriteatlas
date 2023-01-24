@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: KaratelAttack
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 5bd8d5fc85f0d574bb18db6b94638bb9, type: 3}
+    - {fileID: 2800000, guid: 5b831bb24470d1a408b0512f5be773d0, type: 3}
+    - {fileID: 2800000, guid: 3c34c8e022f04c54ca7ffa5631f236c0, type: 3}
+    - {fileID: 2800000, guid: 34cbffb77e64d37418fef6b2b885c728, type: 3}
+    - {fileID: 2800000, guid: fdbcdd36cc9d6304a8b89f08d1e3e36d, type: 3}
+    - {fileID: 2800000, guid: 8fd0901c0981d4645ab2cf5c7533b3bc, type: 3}
+    - {fileID: 2800000, guid: cec35043b13d25a42b5dd36226eaa71a, type: 3}
+    - {fileID: 2800000, guid: 1645de9f3a8eb0043af94cfe06850c2e, type: 3}
+    - {fileID: 2800000, guid: 2ab2f8a646431394db032c0bc93a72a9, type: 3}
+    - {fileID: 2800000, guid: 0646d9ecb6178af489694f96c6d4ca03, type: 3}
+    - {fileID: 2800000, guid: ca75587c72ff454459e08915ce5926b5, type: 3}
+    - {fileID: 2800000, guid: ff37becfa20c1bf43b8c44a7b53afe02, type: 3}
+    - {fileID: 2800000, guid: f7edbd6f7fdf7cd4a930f9019a4ad894, type: 3}
+    - {fileID: 2800000, guid: f43f53e32c32fbf419de7f64b8024e8f, type: 3}
+    - {fileID: 2800000, guid: 07c680657c9175f4baa5fc1ded3777c4, type: 3}
+    - {fileID: 2800000, guid: cdf7b1bc4ac640348893cbacf30bad38, type: 3}
+    - {fileID: 2800000, guid: 4b3b324fd7de46143827fc8e8f739c50, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3c34c8e022f04c54ca7ffa5631f236c0, type: 3}
+  - {fileID: 21300000, guid: 5b831bb24470d1a408b0512f5be773d0, type: 3}
+  - {fileID: 21300000, guid: cec35043b13d25a42b5dd36226eaa71a, type: 3}
+  - {fileID: 21300000, guid: f43f53e32c32fbf419de7f64b8024e8f, type: 3}
+  - {fileID: 21300000, guid: 07c680657c9175f4baa5fc1ded3777c4, type: 3}
+  - {fileID: 21300000, guid: fdbcdd36cc9d6304a8b89f08d1e3e36d, type: 3}
+  - {fileID: 21300000, guid: 2ab2f8a646431394db032c0bc93a72a9, type: 3}
+  - {fileID: 21300000, guid: 34cbffb77e64d37418fef6b2b885c728, type: 3}
+  - {fileID: 21300000, guid: 8fd0901c0981d4645ab2cf5c7533b3bc, type: 3}
+  - {fileID: 21300000, guid: ca75587c72ff454459e08915ce5926b5, type: 3}
+  - {fileID: 21300000, guid: cdf7b1bc4ac640348893cbacf30bad38, type: 3}
+  - {fileID: 21300000, guid: 0646d9ecb6178af489694f96c6d4ca03, type: 3}
+  - {fileID: 21300000, guid: 5bd8d5fc85f0d574bb18db6b94638bb9, type: 3}
+  - {fileID: 21300000, guid: 4b3b324fd7de46143827fc8e8f739c50, type: 3}
+  - {fileID: 21300000, guid: f7edbd6f7fdf7cd4a930f9019a4ad894, type: 3}
+  - {fileID: 21300000, guid: 1645de9f3a8eb0043af94cfe06850c2e, type: 3}
+  - {fileID: 21300000, guid: ff37becfa20c1bf43b8c44a7b53afe02, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00004"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00002"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00012"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00020"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00021"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00008"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00015"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00006"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00011"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00017"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00022"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00016"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00000"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00023"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00019"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00014"
+  - "karatel \u0430\u0442\u0430\u043A\u0430_00018"
+  m_RenderDataMap: {}
+  m_Tag: KaratelAttack
+  m_IsVariant: 0

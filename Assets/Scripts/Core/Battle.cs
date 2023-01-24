@@ -25,6 +25,7 @@ namespace Core
         private static readonly string DiceRerollAudioEvent  = "event:/DiceReroll";
         private static readonly string EndMoveAudioEvent  = "event:/EndMove";
         private static readonly string DiceUsedAudioEvent  = "event:/DiceUsed";
+        private static readonly string NoActionsAudioEvent  = "event:/NoActions";
 
 
         public Battle(StateMachine stateMachine, int maxActions, GuardianList guardianList, BattlePlayer player, EnemyList enemyList, AttackProcessor attackProcessor)
@@ -53,6 +54,7 @@ namespace Core
         {
             if (!CanAct())
             {
+                FMODUnity.RuntimeManager.PlayOneShot(NoActionsAudioEvent);
                 return;
             }
             _attackProcessor.UseDice(battleDice);
@@ -64,6 +66,7 @@ namespace Core
         {
             if (!CanAct())
             {
+                FMODUnity.RuntimeManager.PlayOneShot(NoActionsAudioEvent);
                 return;
             }
             guardianCell.RerollDices();

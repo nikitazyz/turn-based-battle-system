@@ -12,12 +12,11 @@ namespace Dices
 
         public Sprite Image => _image;
 
-        public void Process(AttackStatus attackStatus)
+        public AbilityEffect[] GetEffects()
         {
-            foreach (var abilityEffect in _effects)
-            {
-                abilityEffect.Process(attackStatus);
-            }
+            AbilityEffect[] abilityEffects = new AbilityEffect[_effects.Count];
+            _effects.CopyTo(abilityEffects);
+            return abilityEffects;
         }
     }
 }
