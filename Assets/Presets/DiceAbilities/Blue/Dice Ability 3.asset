@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa2a3cace544f61a4c98f008b3c3068, type: 3}
   m_Name: Dice Ability 3
   m_EditorClassIdentifier: 
-  _image: {fileID: 0}
+  _image: {fileID: 21300000, guid: 2e5231e7a7b144047b15ac9a66c985ea, type: 3}
   _effects: []

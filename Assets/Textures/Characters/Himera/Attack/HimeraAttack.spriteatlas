@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HimeraAttack
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: fd0ca9f80e71f7546880e8981402ccf9, type: 3}
+    - {fileID: 2800000, guid: f0123e4205d5a544394e8309bb42b03f, type: 3}
+    - {fileID: 2800000, guid: 378817947fade4a4ca060635e2f5c659, type: 3}
+    - {fileID: 2800000, guid: c85b58b5d63445a4fb420e5378aa00e9, type: 3}
+    - {fileID: 2800000, guid: f57df703dba02ab4fa3a02c2b8a5102c, type: 3}
+    - {fileID: 2800000, guid: d83ad317fdb15a54d97ba2ab7b6499cb, type: 3}
+    - {fileID: 2800000, guid: c550adc3d5ec276489da69bd723d91e9, type: 3}
+    - {fileID: 2800000, guid: 999a1bb2046a63540a936bb9db9d9381, type: 3}
+    - {fileID: 2800000, guid: 6531e0cc5c645284094c47e69fb7b992, type: 3}
+    - {fileID: 2800000, guid: 0e160371a99565447b1b9d35c8facad4, type: 3}
+    - {fileID: 2800000, guid: 71c60d703a629454faf0fa26bb81870f, type: 3}
+    - {fileID: 2800000, guid: fb044c6c85373704aac2b4887c8a95ea, type: 3}
+    - {fileID: 2800000, guid: b6e8538a3368edc4fa2c6ffff54e7aa8, type: 3}
+    - {fileID: 2800000, guid: c364279f320e81343b9390fde348fecb, type: 3}
+    - {fileID: 2800000, guid: 98174cf3e3d9805448711a07b813959d, type: 3}
+    - {fileID: 2800000, guid: bedc4f3750b401149a2a44e3afef69b0, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 71c60d703a629454faf0fa26bb81870f, type: 3}
+  - {fileID: 21300000, guid: 0e160371a99565447b1b9d35c8facad4, type: 3}
+  - {fileID: 21300000, guid: f0123e4205d5a544394e8309bb42b03f, type: 3}
+  - {fileID: 21300000, guid: 999a1bb2046a63540a936bb9db9d9381, type: 3}
+  - {fileID: 21300000, guid: f57df703dba02ab4fa3a02c2b8a5102c, type: 3}
+  - {fileID: 21300000, guid: c550adc3d5ec276489da69bd723d91e9, type: 3}
+  - {fileID: 21300000, guid: 98174cf3e3d9805448711a07b813959d, type: 3}
+  - {fileID: 21300000, guid: 378817947fade4a4ca060635e2f5c659, type: 3}
+  - {fileID: 21300000, guid: c85b58b5d63445a4fb420e5378aa00e9, type: 3}
+  - {fileID: 21300000, guid: d83ad317fdb15a54d97ba2ab7b6499cb, type: 3}
+  - {fileID: 21300000, guid: bedc4f3750b401149a2a44e3afef69b0, type: 3}
+  - {fileID: 21300000, guid: fd0ca9f80e71f7546880e8981402ccf9, type: 3}
+  - {fileID: 21300000, guid: b6e8538a3368edc4fa2c6ffff54e7aa8, type: 3}
+  - {fileID: 21300000, guid: fb044c6c85373704aac2b4887c8a95ea, type: 3}
+  - {fileID: 21300000, guid: 6531e0cc5c645284094c47e69fb7b992, type: 3}
+  - {fileID: 21300000, guid: c364279f320e81343b9390fde348fecb, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 27"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 26"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 18"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 24"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 21"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 23"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 31"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 19"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 20"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 22"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 32"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 17"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 29"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 28"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 25"
+  - "\u0410\u0442\u0430\u043A\u0430 \u0445\u0438\u043C\u0435\u0440\u044B \u0441 \u043E\u0433\u043D\u0451\u043C
+    \u0438 \u044F\u0437\u044B\u043A\u043E\u043C 30"
+  m_RenderDataMap: {}
+  m_Tag: HimeraAttack
+  m_IsVariant: 0

@@ -6,10 +6,5 @@ namespace Dices.AbilityEffects
     {
         [field: SerializeField]
         public int Damage { get; private set; }
-
-        public override void Process(AttackStatus attackStatus)
-        {
-            attackStatus.Damage += Damage;
-        }
     }
 }

@@ -10,6 +10,5 @@ namespace Dices.AbilityEffects
         [SerializeField, HideInInspector] private bool _isOpen = true;
 #endif
 
-        public abstract void Process(AttackStatus attackStatus);
     }
 }

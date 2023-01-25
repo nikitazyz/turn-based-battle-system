@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GalshataiAttack
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: bbee04494a5cc1f4e97d521f65a9569a, type: 3}
+    - {fileID: 2800000, guid: 94f796f8da5a8714f80a6a5f1068fd5c, type: 3}
+    - {fileID: 2800000, guid: e3a810deeb0f7a0409d629163a921e67, type: 3}
+    - {fileID: 2800000, guid: 4af5b85bf92e5bb4f9a02711d3b482ac, type: 3}
+    - {fileID: 2800000, guid: cccc47bcc6308ef4785eac1a07cfd110, type: 3}
+    - {fileID: 2800000, guid: aa60b50e9052d1c4f856ed512e392d18, type: 3}
+    - {fileID: 2800000, guid: 7333dd75efcc3e945a1a5334237d9ac6, type: 3}
+    - {fileID: 2800000, guid: 30a5fdc1b680e224fb74191c48ba4387, type: 3}
+    - {fileID: 2800000, guid: 5cac57fb9162a3442aefd36deb3a0a4a, type: 3}
+    - {fileID: 2800000, guid: c86a98ecfc019f4479c773f3a6d70f73, type: 3}
+    - {fileID: 2800000, guid: d2420819d842191439a64e28cec60096, type: 3}
+    - {fileID: 2800000, guid: 951edac8dc7a402498081d9bcee9a139, type: 3}
+    - {fileID: 2800000, guid: a06e6347a8624254cba3bfff977322cb, type: 3}
+    - {fileID: 2800000, guid: 4324b06c1eb6ee048aa45871484a69eb, type: 3}
+    - {fileID: 2800000, guid: c89290f3856a7d64f895052a75161d72, type: 3}
+    - {fileID: 2800000, guid: 3db136f85b391944ca94a72734ca9ba0, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 30a5fdc1b680e224fb74191c48ba4387, type: 3}
+  - {fileID: 21300000, guid: c89290f3856a7d64f895052a75161d72, type: 3}
+  - {fileID: 21300000, guid: 7333dd75efcc3e945a1a5334237d9ac6, type: 3}
+  - {fileID: 21300000, guid: a06e6347a8624254cba3bfff977322cb, type: 3}
+  - {fileID: 21300000, guid: 951edac8dc7a402498081d9bcee9a139, type: 3}
+  - {fileID: 21300000, guid: 3db136f85b391944ca94a72734ca9ba0, type: 3}
+  - {fileID: 21300000, guid: 94f796f8da5a8714f80a6a5f1068fd5c, type: 3}
+  - {fileID: 21300000, guid: d2420819d842191439a64e28cec60096, type: 3}
+  - {fileID: 21300000, guid: bbee04494a5cc1f4e97d521f65a9569a, type: 3}
+  - {fileID: 21300000, guid: 4af5b85bf92e5bb4f9a02711d3b482ac, type: 3}
+  - {fileID: 21300000, guid: 5cac57fb9162a3442aefd36deb3a0a4a, type: 3}
+  - {fileID: 21300000, guid: 4324b06c1eb6ee048aa45871484a69eb, type: 3}
+  - {fileID: 21300000, guid: cccc47bcc6308ef4785eac1a07cfd110, type: 3}
+  - {fileID: 21300000, guid: c86a98ecfc019f4479c773f3a6d70f73, type: 3}
+  - {fileID: 21300000, guid: aa60b50e9052d1c4f856ed512e392d18, type: 3}
+  - {fileID: 21300000, guid: e3a810deeb0f7a0409d629163a921e67, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 1257
+  - 1264
+  - 1256
+  - 1262
+  - 1261
+  - 1265
+  - 1251
+  - 1260
+  - 1250
+  - 1253
+  - 1258
+  - 1263
+  - 1254
+  - 1259
+  - 1255
+  - 1252
+  m_RenderDataMap: {}
+  m_Tag: GalshataiAttack
+  m_IsVariant: 0

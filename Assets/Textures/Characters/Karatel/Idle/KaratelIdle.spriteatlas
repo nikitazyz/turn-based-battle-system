@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: KaratelIdle
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4a275ca2af400184d8a9561f16ac1f0e, type: 3}
+    - {fileID: 2800000, guid: 2c58ca03d001151479b05fc8b4bb160b, type: 3}
+    - {fileID: 2800000, guid: b0c6df003d9d4574dbf6e5646c66d02c, type: 3}
+    - {fileID: 2800000, guid: 8114716fbdf714942974eab46a837fc8, type: 3}
+    - {fileID: 2800000, guid: d1fc083b26722514f89b94a60a1abf75, type: 3}
+    - {fileID: 2800000, guid: 482fa2b17fa598b4385ddc53ff619ad4, type: 3}
+    - {fileID: 2800000, guid: a97f1036866b1d74daaa421e124200a3, type: 3}
+    - {fileID: 2800000, guid: fce9918c4b770ef45ad6ff85d72d82d1, type: 3}
+    - {fileID: 2800000, guid: 6dc82735909c08941b3c288a7cc41490, type: 3}
+    - {fileID: 2800000, guid: fc23fc30309ccea4a8513d6406e3fb0b, type: 3}
+    - {fileID: 2800000, guid: c434706d8d07abc42ab7fb8e23cf79ee, type: 3}
+    - {fileID: 2800000, guid: f216f20d9d9b20d419974f37ba68310b, type: 3}
+    - {fileID: 2800000, guid: 07ba20f696b36b442a23795fe6322b73, type: 3}
+    - {fileID: 2800000, guid: 1de1b7aa4ee7b34459afa3f7dc51383a, type: 3}
+    - {fileID: 2800000, guid: 76acc0ae6ba33364eb817b8a45ff55a0, type: 3}
+    - {fileID: 2800000, guid: 648953973e94aac4e8a9b088cda80794, type: 3}
+    - {fileID: 2800000, guid: b86ef282f8afc25408238bb603482006, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: b0c6df003d9d4574dbf6e5646c66d02c, type: 3}
+  - {fileID: 21300000, guid: fc23fc30309ccea4a8513d6406e3fb0b, type: 3}
+  - {fileID: 21300000, guid: 482fa2b17fa598b4385ddc53ff619ad4, type: 3}
+  - {fileID: 21300000, guid: b86ef282f8afc25408238bb603482006, type: 3}
+  - {fileID: 21300000, guid: 4a275ca2af400184d8a9561f16ac1f0e, type: 3}
+  - {fileID: 21300000, guid: 2c58ca03d001151479b05fc8b4bb160b, type: 3}
+  - {fileID: 21300000, guid: 6dc82735909c08941b3c288a7cc41490, type: 3}
+  - {fileID: 21300000, guid: a97f1036866b1d74daaa421e124200a3, type: 3}
+  - {fileID: 21300000, guid: 07ba20f696b36b442a23795fe6322b73, type: 3}
+  - {fileID: 21300000, guid: 648953973e94aac4e8a9b088cda80794, type: 3}
+  - {fileID: 21300000, guid: 1de1b7aa4ee7b34459afa3f7dc51383a, type: 3}
+  - {fileID: 21300000, guid: d1fc083b26722514f89b94a60a1abf75, type: 3}
+  - {fileID: 21300000, guid: fce9918c4b770ef45ad6ff85d72d82d1, type: 3}
+  - {fileID: 21300000, guid: f216f20d9d9b20d419974f37ba68310b, type: 3}
+  - {fileID: 21300000, guid: c434706d8d07abc42ab7fb8e23cf79ee, type: 3}
+  - {fileID: 21300000, guid: 76acc0ae6ba33364eb817b8a45ff55a0, type: 3}
+  - {fileID: 21300000, guid: 8114716fbdf714942974eab46a837fc8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - karatel (1)_00004
+  - karatel (1)_00018
+  - karatel (1)_00010
+  - karatel (1)_00031
+  - karatel (1)_00000
+  - karatel (1)_00002
+  - karatel (1)_00016
+  - karatel (1)_00012
+  - karatel (1)_00024
+  - karatel (1)_00030
+  - karatel (1)_00026
+  - karatel (1)_00008
+  - karatel (1)_00014
+  - karatel (1)_00022
+  - karatel (1)_00020
+  - karatel (1)_00028
+  - karatel (1)_00006
+  m_RenderDataMap: {}
+  m_Tag: KaratelIdle
+  m_IsVariant: 0
