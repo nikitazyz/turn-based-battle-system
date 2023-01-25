@@ -14,7 +14,7 @@ namespace Dices
 
         private EffectTargetType _effectTargetType;
         private int _damageOffset;
-        private int _nextPhysicalDamageScale;
+        private int _nextPhysicalDamageScale = 1;
 
         private List<Func<int, int>> _damageModifiers;
         private List<Func<int, int>> _physicalDamageModifiers;
@@ -45,7 +45,7 @@ namespace Dices
                     case DamageEffect damageEffect:
                         DamageTargetEnemies(damageEffect.Damage * nextPhysicalDamageScale + damageOffset, enemies);
                         _damageOffset = 0;
-                        _nextPhysicalDamageScale = 0;
+                        _nextPhysicalDamageScale = 1;
                         break;
                     case HealEffect healEffect:
                         _battlePlayer.Health.Heal(healEffect.Heal);
@@ -60,7 +60,7 @@ namespace Dices
                         _damageOffset += nextDamageOffsetEffect.DamageOffset;
                         break;
                     case ScaleNextDamageEffect scaleNextDamageEffect:
-                        _nextPhysicalDamageScale += scaleNextDamageEffect.Scale;
+                        _nextPhysicalDamageScale = _nextPhysicalDamageScale == 1 ? scaleNextDamageEffect.Scale : _nextPhysicalDamageScale + nextPhysicalDamageScale;
                         break;
                 }
             }
