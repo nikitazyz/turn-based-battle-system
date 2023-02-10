@@ -68,29 +68,51 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 60807632d3b226245874aca46d870006, type: 3}
     - {fileID: 2800000, guid: 560c44c5820bab947beba791f72f22e4, type: 3}
     - {fileID: 2800000, guid: 6cb0c4d7001d3ae48ad11d21ec7f46e9, type: 3}
+    - {fileID: 2800000, guid: 2bfaf663cd9787d4dbb50a465949e36b, type: 3}
+    - {fileID: 2800000, guid: 0f00a0f48109e9341a2843237b10a926, type: 3}
+    - {fileID: 2800000, guid: d63d79c708ce78644ad74c8fcc9188fc, type: 3}
+    - {fileID: 2800000, guid: 8dd0c80d3c7cfaa498e5bf063a19e4c0, type: 3}
+    - {fileID: 2800000, guid: 266e4cf69ad8f4b43b90040563b9f51e, type: 3}
+    - {fileID: 2800000, guid: 25d0328647446e249a4235b53a3a36cf, type: 3}
+    - {fileID: 2800000, guid: 7a3fb3c0f133c5443977957284b7bc10, type: 3}
+    - {fileID: 2800000, guid: 9c47d0a6321617e42b827677029bb3d1, type: 3}
+    - {fileID: 2800000, guid: 0b8b7febc00bbe546b7743b8caa95183, type: 3}
+    - {fileID: 2800000, guid: e92b366736641eb4c931fcfc4118aa17, type: 3}
+    - {fileID: 2800000, guid: c46da038ba605ca43bd288c8afe7d1e9, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: c72e883039e0e1d4aa72da5deee7d645, type: 3}
+  - {fileID: 21300000, guid: 7a3fb3c0f133c5443977957284b7bc10, type: 3}
   - {fileID: 21300000, guid: c3f32791f4c365348a12d9206b789d2e, type: 3}
   - {fileID: 21300000, guid: af49b9d19952e6b4c846023573c0ebc1, type: 3}
   - {fileID: 21300000, guid: 60807632d3b226245874aca46d870006, type: 3}
+  - {fileID: 21300000, guid: 2bfaf663cd9787d4dbb50a465949e36b, type: 3}
+  - {fileID: 21300000, guid: 0f00a0f48109e9341a2843237b10a926, type: 3}
   - {fileID: 21300000, guid: afc60a7583391334b89d18706040a021, type: 3}
   - {fileID: 21300000, guid: 560c44c5820bab947beba791f72f22e4, type: 3}
   - {fileID: 21300000, guid: 4226c466316be554e99c0eef64aa9962, type: 3}
+  - {fileID: 21300000, guid: 25d0328647446e249a4235b53a3a36cf, type: 3}
+  - {fileID: 21300000, guid: 9c47d0a6321617e42b827677029bb3d1, type: 3}
   - {fileID: 21300000, guid: b978c8f65da53cf4ea9221933b1efc59, type: 3}
+  - {fileID: 21300000, guid: 266e4cf69ad8f4b43b90040563b9f51e, type: 3}
   - {fileID: 21300000, guid: 769799471d0cc9d4b82d9a8517ac0232, type: 3}
+  - {fileID: 21300000, guid: e92b366736641eb4c931fcfc4118aa17, type: 3}
+  - {fileID: 21300000, guid: d63d79c708ce78644ad74c8fcc9188fc, type: 3}
   - {fileID: 21300000, guid: 6cb0c4d7001d3ae48ad11d21ec7f46e9, type: 3}
   - {fileID: 21300000, guid: 2e5231e7a7b144047b15ac9a66c985ea, type: 3}
   - {fileID: 21300000, guid: f5e808f7c71df5d4e9f4389ad8495e6c, type: 3}
+  - {fileID: 21300000, guid: c46da038ba605ca43bd288c8afe7d1e9, type: 3}
   - {fileID: 21300000, guid: b8730758cbb952343a3977e8af8f9012, type: 3}
   - {fileID: 21300000, guid: 003aa9da12aee7e4d94fa59c50aebd5b, type: 3}
   - {fileID: 21300000, guid: c2ac59faa57b4e246976aaa2cdf25f05, type: 3}
   - {fileID: 21300000, guid: e523802b5d008954f80eef00a96a7071, type: 3}
   - {fileID: 21300000, guid: 1957c62b10b8b0843bb16e835d041c10, type: 3}
   - {fileID: 21300000, guid: bfabefdb0ed22964ea3145481cb6fe8e, type: 3}
+  - {fileID: 21300000, guid: 0b8b7febc00bbe546b7743b8caa95183, type: 3}
+  - {fileID: 21300000, guid: 8dd0c80d3c7cfaa498e5bf063a19e4c0, type: 3}
   - {fileID: 21300000, guid: b7098c0d59b2758478d2c139ade3f935, type: 3}
   - {fileID: 21300000, guid: 1e39c2bed79b4f94c852799d50057025, type: 3}
   - {fileID: 21300000, guid: 824e38fe22147814e8779c8ad8f86f15, type: 3}
@@ -99,23 +121,34 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 75c52ffff364ad849b21a97b6b741f3d, type: 3}
   m_PackedSpriteNamesToIndex:
   - Group 57760
+  - Group 57992
   - Group 57712
   - Group 55
   - Group 57799
+  - healing allies 2
+  - healing allies 3
   - Group 57750
   - Group 57800
   - Group 53
+  - Group 57991
+  - Group 57753
   - Group 57744
+  - Group 57990
   - Group 57749
+  - Group 57773
+  - physical damage 1
   - Group 57810
   - Group 57728
   - Group 57746
+  - Group 57989
   - Group 57742
   - Group 57738
   - Group 57798
   - Group 57735
   - Group 57713
   - Group 57711
+  - Group 57766
+  - physical damage 2
   - Group 57732
   - Group 57745
   - Group 57739

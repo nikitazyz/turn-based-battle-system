@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e37ffb2587b4ad1840dc959099440a2, type: 3}
+  m_Name: Punisher
+  m_EditorClassIdentifier: 
+  _ability0: {fileID: 11400000, guid: 7b2ce63fe774e714bbab8e7a0c6b8cbd, type: 2}
+  _ability1: {fileID: 11400000, guid: e5e1bfe5155b5c442b60e6f81350746b, type: 2}
+  _ability2: {fileID: 11400000, guid: 50a1e41a4e9b4884c96df7a64aee5b23, type: 2}
+  _ability3: {fileID: 11400000, guid: adc5f20974c3ca449a71646fd79698d1, type: 2}
+  _ability4: {fileID: 11400000, guid: 457c2ec3a2d742f46996c3ed6ac8223f, type: 2}
+  _ability5: {fileID: 11400000, guid: 69170fd0cfeab4a4d9e3320d16f4becc, type: 2}

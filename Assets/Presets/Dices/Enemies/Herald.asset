@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e37ffb2587b4ad1840dc959099440a2, type: 3}
+  m_Name: Herald
+  m_EditorClassIdentifier: 
+  _ability0: {fileID: 11400000, guid: 58148f377d9c99e438ab3f0137b70516, type: 2}
+  _ability1: {fileID: 11400000, guid: a480699eca036dc42b8919a520c6e695, type: 2}
+  _ability2: {fileID: 11400000, guid: 0492a9058f5ad4041837dd11afd97261, type: 2}
+  _ability3: {fileID: 11400000, guid: fdeeea07cdecb49418b81e215bc76f3b, type: 2}
+  _ability4: {fileID: 11400000, guid: d93217d5de8cdd6419c6f29f5c1d283c, type: 2}
+  _ability5: {fileID: 11400000, guid: bac2c78ba3fcc4648971207f1425bd89, type: 2}

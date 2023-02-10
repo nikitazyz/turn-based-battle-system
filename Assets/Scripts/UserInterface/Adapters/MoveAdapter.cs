@@ -3,6 +3,7 @@ using Core;
 using Dices;
 using StateMachineSystem;
 using StateMachineSystem.BattleStateMachine;
+using UnityEngine;
 using UserInterface.Views;
 using UserInterface.Views.MoveViewElements;
 
@@ -58,15 +59,31 @@ namespace UserInterface.Adapters
                 BattleDiceElement diceElement = cellElement.BattleDiceElements[j];
                 BattleDice dice = dices[j];
                 
-                dices[j].Rerolled += _ => OnRerolled(dice, diceElement);
-                dices[j].Used += () => OnUsed(diceElement);
-                dices[j].Reseted += () => OnReseted(diceElement);
+                dice.Rerolled += _ => OnRerolled(dice, diceElement);
+                dice.Used += () => OnUsed(diceElement);
+                dice.Reseted += () => OnReseted(diceElement);
+                dice.FlameSet += side => OnFlameSet(side, dice, diceElement);
+                dice.FlameReset += () => OnFlameReset(diceElement);
             }
+        }
+
+        private static void OnFlameReset(BattleDiceElement diceElement)
+        {
+            diceElement.FireFrameEnabled = false;
+        }
+
+        private static void OnFlameSet(int side, BattleDice battleDice, BattleDiceElement battleDiceElement)
+        {
+            battleDiceElement.FireFrameEnabled = battleDice.IsFlameOnActiveSide;
         }
 
         #region Dice Events Handlers
 
-        private static void OnRerolled(BattleDice dice, BattleDiceElement diceElement) => diceElement.Image = dice.DiceAbility().Image;
+        private static void OnRerolled(BattleDice dice, BattleDiceElement diceElement)
+        {
+            diceElement.Image = dice.DiceAbility.Image;
+            diceElement.FireFrameEnabled = dice.IsFlameOnActiveSide;
+        }
 
         private static void OnUsed(BattleDiceElement diceElement) => diceElement.Enabled = false;
 

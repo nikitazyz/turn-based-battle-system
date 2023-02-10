@@ -1,4 +1,5 @@
 using System;
+using AttackSystem;
 using Dices;
 using Enemies;
 using Guardians;
@@ -19,7 +20,7 @@ namespace Core
         public EnemyList EnemyList { get; }
         public StateMachine StateMachine { get; }
         
-        private readonly AttackProcessor _attackProcessor;
+        private readonly PlayerAttackProcessor _attackProcessor;
         
         //FMOD events
         private static readonly string DiceRerollAudioEvent  = "event:/DiceReroll";
@@ -28,7 +29,7 @@ namespace Core
         private static readonly string NoActionsAudioEvent  = "event:/NoActions";
 
 
-        public Battle(StateMachine stateMachine, int maxActions, GuardianList guardianList, BattlePlayer player, EnemyList enemyList, AttackProcessor attackProcessor)
+        public Battle(StateMachine stateMachine, int maxActions, GuardianList guardianList, BattlePlayer player, EnemyList enemyList, PlayerAttackProcessor attackProcessor)
         {
             _attackProcessor = attackProcessor;
             StateMachine = stateMachine;

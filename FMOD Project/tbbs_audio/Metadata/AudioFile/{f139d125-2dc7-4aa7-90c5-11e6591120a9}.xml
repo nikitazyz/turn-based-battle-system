@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f139d125-2dc7-4aa7-90c5-11e6591120a9}">
+		<property name="assetPath">
+			<value>Through thorns to the Stars (Battle theme).wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>77.522267573696141</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e1b965e7-2075-45f4-9954-b953de37f156}</destination>
+		</relationship>
+	</object>
+</objects>

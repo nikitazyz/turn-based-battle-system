@@ -46,10 +46,8 @@ namespace Guardians
         {
             foreach (var dice in _dices)
             {
-                if (dice.IsUsed)
-                {
-                    dice.Reset();
-                }
+                dice.Reset();
+                dice.ResetFlame();
             }
         }
     }

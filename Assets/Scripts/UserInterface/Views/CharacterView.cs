@@ -1,17 +1,39 @@
+using System;
+using Dices;
+using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.UI;
 using UserInterface.Views.Elements;
 
 namespace UserInterface.Views
 {
     public class CharacterView : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer _characterRenderer;
         [SerializeField] private HealthBarElement _healthBarElement;
+        [SerializeField] private PoisonCounterElement _poisonCounterElement;
+        [SerializeField] private Animator _animator;
+        
+        private static readonly int Attack = Animator.StringToHash("Attack");
 
-        public Sprite CharacterSprite
+        public RuntimeAnimatorController AnimatorController
         {
-            get => _characterRenderer.sprite;
-            set => _characterRenderer.sprite = value;
+            get => _animator.runtimeAnimatorController;
+            set => _animator.runtimeAnimatorController = value;
+        }
+
+        public void TriggerAnimation(DiceAnimationType animationType)
+        {
+            _animator.SetTrigger(GetAnimationFromType(animationType));
+        }
+
+        private int GetAnimationFromType(DiceAnimationType animationType)
+        {
+            return animationType switch
+            {
+                DiceAnimationType.None => 0,
+                DiceAnimationType.Attack => Attack,
+                _ => throw new ArgumentOutOfRangeException(nameof(animationType), animationType, null)
+            };
         }
 
         public int HealthValue
@@ -24,6 +46,12 @@ namespace UserInterface.Views
         {
             get => _healthBarElement.MaxValue;
             set => _healthBarElement.MaxValue = value;
+        }
+
+        public int PoisonCounter
+        {
+            get => _poisonCounterElement.Value;
+            set => _poisonCounterElement.Value = value;
         }
     }
 }

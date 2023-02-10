@@ -6,7 +6,7 @@ namespace StateMachineSystem
 {
     public sealed class StateMachine
     {
-        public Action<Type> StateChanged;
+        public event Action<Type> StateChanged;
 
         private IState _currentState;
 

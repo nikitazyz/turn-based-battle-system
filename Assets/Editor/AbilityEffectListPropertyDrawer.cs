@@ -15,6 +15,7 @@ public class AbilityEffectListPropertyDrawer : Editor
     private string assetPath;
     private SerializedProperty effectsProperty;
     private SerializedProperty image;
+    private SerializedProperty animationType;
     private List<Object> subObjects;
 
     private Type[] types;
@@ -31,6 +32,7 @@ public class AbilityEffectListPropertyDrawer : Editor
         subObjects = AssetDatabase.LoadAllAssetRepresentationsAtPath(assetPath).ToList();
         effectsProperty = serializedObject.FindProperty("_effects");
         image = serializedObject.FindProperty("_image");
+        animationType = serializedObject.FindProperty("_diceAnimationType");
         SubObjectsNullCheck(subObjects);
         ListNullCheck(effectsProperty);
         listEffects = new SerializedProperty[effectsProperty.arraySize];
@@ -49,6 +51,7 @@ public class AbilityEffectListPropertyDrawer : Editor
     {
         EditorGUI.BeginChangeCheck();
         EditorGUILayout.PropertyField(image);
+        EditorGUILayout.PropertyField(animationType);
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Effects", EditorStyles.largeLabel);
         DisplayList(listEffects);

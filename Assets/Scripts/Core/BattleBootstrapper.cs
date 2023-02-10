@@ -1,7 +1,10 @@
+using System;
 using System.Linq;
+using AttackSystem;
 using CoroutineManagement;
 using Dices;
 using Enemies;
+using FMOD.Studio;
 using Guardians;
 using HealthSystem;
 using Initialization;
@@ -20,60 +23,85 @@ namespace Core
         private BattleStatus _battleStatus;
         private Battle _battle;
 
-        private AttackProcessor _attackProcessor;
+        private PlayerAttackProcessor _attackProcessor;
+        private EnemyAttackProcessor _enemyAttackProcessor;
         private CoroutineService _coroutineService;
 
         private EnemyAttack _enemyAttack;
 
+        private EventInstance _fmodMusicEventInstance;
+        private GuardianList _guardianList;
+        private BattlePlayer _player;
+        private EnemyList _enemyList;
+
         public void Initialize(BattleStatus battleStatus)
         {
-            _stateMachine = new StateMachine();
             _battleStatus = battleStatus;
-            var guardianList = CreateGuardianList();
+
+            _player = CreatePlayer(battleStatus);
+            _enemyList = CreateEnemyList(battleStatus);
+            _guardianList = CreateGuardianList(battleStatus);
+            
+            _stateMachine = new StateMachine();
+
             _coroutineService = CoroutineService.CreateInstance();
-
-            var enemyList = new EnemyList(battleStatus.Enemies.Select((enemy, _) => new BattleEnemy(enemy, 5)).ToArray());
-            _enemyAttack = new EnemyAttack(_coroutineService, enemyList);
-
+            
+            _enemyAttackProcessor = new EnemyAttackProcessor(_enemyList, _player, _guardianList);
+            _enemyAttack = new EnemyAttack(_coroutineService, _enemyList, _enemyAttackProcessor);
             _enemyAttack.AllEnemyAttacked += () => _stateMachine.ChangeState<UserMoveState>();
             
-            var player = new BattlePlayer(battleStatus.Player, battleStatus.Player.MaxHealth,
-                battleStatus.PlayerHealth);
-            
-            _attackProcessor = new AttackProcessor(enemyList, player);
-            
-            _battle = new Battle(_stateMachine, _battleStatus.GameSettings.Battle.MaxActions, guardianList, player, enemyList, _attackProcessor);
+            InitializeStateMachineStates(_guardianList, _enemyAttack);
 
-            _battleUIBootstrapper.Initialize(_battle);
+            _attackProcessor = new PlayerAttackProcessor(_enemyList, _player);
             
-            InitializeStateMachineStates(guardianList);
+            _battle = InitializeBattle();
+            _battleUIBootstrapper.Initialize(_battle, _attackProcessor, _enemyAttack);
 
             _stateMachine.ChangeState<UserMoveState>();
             
-            foreach (GuardianCell guardianCell in guardianList)
+            foreach (GuardianCell guardianCell in _guardianList)
             {
                 guardianCell.RerollDices();
             }
             
-            enemyList.EnemiesDead += EnemyListOnEnemiesDead;
-            player.Health.TookDamage += PlayerHealthOnTookDamage;
+            _enemyList.EnemiesDead += EnemyListOnEnemiesDead;
+            _player.Health.TookDamage += PlayerHealthOnTookDamage;
+            
+            _fmodMusicEventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+            _fmodMusicEventInstance.start();
         }
 
-        private GuardianList CreateGuardianList()
+        private Battle InitializeBattle()
+        {
+            return new Battle(_stateMachine, _battleStatus.GameSettings.Battle.MaxActions, _guardianList, _player, _enemyList, _attackProcessor);
+        }
+
+        private static EnemyList CreateEnemyList(BattleStatus battleStatus)
+        {
+            return new EnemyList(battleStatus.Enemies.Select((enemy, _) => new BattleEnemy(enemy, 5)).ToArray());
+        }
+
+        private static BattlePlayer CreatePlayer(BattleStatus battleStatus)
+        {
+            return new BattlePlayer(battleStatus.Player, battleStatus.Player.MaxHealth,
+                battleStatus.PlayerHealth);
+        }
+
+        private static GuardianList CreateGuardianList(BattleStatus battleStatus)
         {
             return new GuardianList(new[]
             {
-                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[0]),
-                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[1]),
-                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[2]),
-                GuardianCellFactory.CreateGuardianCell(_battleStatus.Guardians[3]),
+                GuardianCellFactory.CreateGuardianCell(battleStatus.Guardians[0]),
+                GuardianCellFactory.CreateGuardianCell(battleStatus.Guardians[1]),
+                GuardianCellFactory.CreateGuardianCell(battleStatus.Guardians[2]),
+                GuardianCellFactory.CreateGuardianCell(battleStatus.Guardians[3]),
             });
         }
 
-        private void InitializeStateMachineStates(GuardianList guardianList)
+        private void InitializeStateMachineStates(GuardianList guardianList, EnemyAttack enemyAttack)
         {
-            _stateMachine.AddState(new UserMoveState(guardianList));
-            _stateMachine.AddState(new EnemyAttackState(_enemyAttack));
+            _stateMachine.AddState(new UserMoveState(guardianList, _player));
+            _stateMachine.AddState(new EnemyAttackState(enemyAttack));
             _stateMachine.AddState(new EndState());
         }
 

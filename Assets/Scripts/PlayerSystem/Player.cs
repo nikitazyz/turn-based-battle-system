@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PlayerSystem
@@ -9,5 +10,9 @@ namespace PlayerSystem
         public int Lvl { get; private set; }
         [field: SerializeField]
         public int MaxHealth { get; private set; }
+
+        [SerializeField] private AnimatorController _animator;
+
+        public AnimatorController Animator => _animator;
     }
 }

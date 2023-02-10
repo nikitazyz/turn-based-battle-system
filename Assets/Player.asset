@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Lvl>k__BackingField: 0
   <MaxHealth>k__BackingField: 25
+  _animator: {fileID: 9100000, guid: f55e23b97b27560458e72cc7f6666eb1, type: 2}

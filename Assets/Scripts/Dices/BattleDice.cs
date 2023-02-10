@@ -7,15 +7,27 @@ namespace Dices
     {
         public event Action<int> Rerolled;
         public event Action Used;
-        public event Action Reseted; 
+        public event Action Reseted;
+        public event Action<int> FlameSet;
+        public event Action FlameReset;
 
         private Dice _dice;
         public int Side { get; private set; }
         public bool IsUsed { get; private set; }
 
+        public int FlamedSide { get; private set; } = -1;
+
+        public bool IsFlameOnActiveSide => Side == FlamedSide;
+
         public BattleDice(Dice dice)
         {
             _dice = dice;
+        }
+        
+        public BattleDice(Dice dice, bool enabled)
+        {
+            _dice = dice;
+            IsUsed = !enabled;
         }
     
         public void Reroll()
@@ -24,10 +36,7 @@ namespace Dices
             Rerolled?.Invoke(Side);
         }
 
-        public DiceAbility DiceAbility()
-        {
-            return _dice.Abilities[Side];
-        }
+        public DiceAbility DiceAbility => _dice.Abilities[Side];
 
         public void Use()
         {
@@ -39,14 +48,31 @@ namespace Dices
             Used?.Invoke();
         }
 
-        public void Reset()
+        public void Reset(bool withoutReroll = false)
         {
             if (!IsUsed)
             {
                 return;
             }
+
+            if (!withoutReroll)
+            {
+                Reroll();
+            }
             IsUsed = false;
             Reseted?.Invoke();
+        }
+
+        public void FlameActiveSide()
+        {
+            FlamedSide = Side;
+            FlameSet?.Invoke(Side);
+        }
+
+        public void ResetFlame()
+        {
+            FlamedSide = -1;
+            FlameReset?.Invoke();
         }
     }
 }

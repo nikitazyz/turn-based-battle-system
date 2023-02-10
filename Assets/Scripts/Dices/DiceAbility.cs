@@ -8,9 +8,11 @@ namespace Dices
     public class DiceAbility : ScriptableObject
     {
         [SerializeField] private Sprite _image;
+        [SerializeField] private DiceAnimationType _diceAnimationType;
         [SerializeField, HideInInspector] private List<AbilityEffect> _effects;
 
         public Sprite Image => _image;
+        public DiceAnimationType DiceAnimationType => _diceAnimationType;
 
         public AbilityEffect[] GetEffects()
         {

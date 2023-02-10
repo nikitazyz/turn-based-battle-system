@@ -65,6 +65,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 10097840cc7edd545932858ac5563575, type: 3}
     - {fileID: 2800000, guid: daa599fd04f8e744da9505d7f2f69e10, type: 3}
     - {fileID: 2800000, guid: c346653beef9f744da6297434bd9f2f3, type: 3}
+    - {fileID: 2800000, guid: 5fab1ddbd3a37fc4ab0659c7627b7347, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -84,6 +85,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d588caba6778b774cae505080d8a974b, type: 3}
   - {fileID: 21300000, guid: c346653beef9f744da6297434bd9f2f3, type: 3}
   - {fileID: 21300000, guid: 4a0a0dbb067f8b0498df934682b468be, type: 3}
+  - {fileID: 21300000, guid: 5fab1ddbd3a37fc4ab0659c7627b7347, type: 3}
   - {fileID: 21300000, guid: 505962ccf8b880f43b1c1da8fc2dd421, type: 3}
   - {fileID: 21300000, guid: daa599fd04f8e744da9505d7f2f69e10, type: 3}
   - {fileID: 21300000, guid: 3ff6612e8310fd7439a0ab4908988e72, type: 3}
@@ -106,6 +108,7 @@ SpriteAtlas:
   - dice_roll
   - paper
   - fire_cube
+  - poison_indicator
   - frame
   - heart
   - barFrame

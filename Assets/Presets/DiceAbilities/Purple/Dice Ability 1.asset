@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dice Ability 1
   m_EditorClassIdentifier: 
   _image: {fileID: 21300000, guid: 75c52ffff364ad849b21a97b6b741f3d, type: 3}
+  _diceAnimationType: 1
   _effects:
   - {fileID: 2135831828994598650}
 --- !u!114 &2135831828994598650
