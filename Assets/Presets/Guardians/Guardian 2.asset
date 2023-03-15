@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _avatar: {fileID: 21300000, guid: 46e52f4f53acde746a23cd82310de354, type: 3}
   _dice: {fileID: 11400000, guid: 9ed0ac4b2fefdbf4e922aafc3077ccda, type: 2}
+  _rerollAmount: 2

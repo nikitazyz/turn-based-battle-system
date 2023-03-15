@@ -61,7 +61,7 @@ namespace Core
             
             foreach (GuardianCell guardianCell in _guardianList)
             {
-                guardianCell.RerollDices();
+                guardianCell.RerollDices(false);
             }
             
             _enemyList.EnemiesDead += EnemyListOnEnemiesDead;

@@ -11,5 +11,8 @@ namespace Guardians
 
         [SerializeField] private Dice _dice;
         public Dice Dice => _dice;
+
+        [SerializeField] private int _rerollAmount;
+        public int RerollAmount => _rerollAmount;
     }
 }

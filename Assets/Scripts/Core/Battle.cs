@@ -65,13 +65,12 @@ namespace Core
 
         public void RerollDices(GuardianCell guardianCell)
         {
-            if (!CanAct())
+            if (StateMachine.CurrentState != typeof(UserMoveState) || guardianCell.RerollAmount <= 0)
             {
                 FMODUnity.RuntimeManager.PlayOneShot(NoActionsAudioEvent);
                 return;
             }
             guardianCell.RerollDices();
-            Act();
             FMODUnity.RuntimeManager.PlayOneShot(DiceRerollAudioEvent);
         }
 
