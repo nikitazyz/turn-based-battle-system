@@ -41,6 +41,7 @@ MonoBehaviour:
   m_Name: Punisher Dice Ability 3
   m_EditorClassIdentifier: 
   _image: {fileID: 21300000, guid: 266e4cf69ad8f4b43b90040563b9f51e, type: 3}
+  _diceAnimationType: 1
   _effects:
   - {fileID: -1653409524641427715}
   - {fileID: -3770568796858636025}
