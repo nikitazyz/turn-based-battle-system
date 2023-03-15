@@ -34,6 +34,10 @@ namespace HealthSystem
 
         public void TakeDamage(int damage)
         {
+            if (damage <=0)
+            {
+                return;
+            }
             if (Value - damage < 0)
             {
                 var value = Value;
@@ -48,6 +52,10 @@ namespace HealthSystem
 
         public void Heal(int healValue)
         {
+            if (healValue <= 0)
+            {
+                return;
+            }
             if (Value + healValue > MaxValue)
             {
                 var value = Value;
