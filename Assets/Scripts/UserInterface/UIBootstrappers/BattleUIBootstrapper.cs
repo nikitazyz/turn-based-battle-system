@@ -16,11 +16,15 @@ namespace UserInterface.UIBootstrappers
         [SerializeField] private CharacterView _playerView;
         [SerializeField] private EnemyView[] _enemyViews;
 
+        [SerializeField] private EndGameView _endGameView;
+
         private MoveAdapter _moveAdapter;
         private StatusAdapter _statusAdapter;
 
         private PlayerAdapter _playerAdapter;
         private EnemyAdapter[] _characterAdapters;
+
+        private EndGameAdapter _endGameAdapter;
 
         public void Initialize(Battle battle, AttackProcessor attackProcessor, EnemyAttack enemyAttack)
         {
@@ -31,11 +35,21 @@ namespace UserInterface.UIBootstrappers
 
             _characterAdapters = new EnemyAdapter[battle.EnemyList.Count];
 
-            for (var i = 0; i < battle.EnemyList.Count; i++)
+            for (var i = 0; i < _enemyViews.Length; i++)
             {
-                var enemy = battle.EnemyList[i];
-                _characterAdapters[i] = new EnemyAdapter(_enemyViews[i], enemy, enemyAttack);
+                if (i < _characterAdapters.Length)
+                {
+                    var enemy = battle.EnemyList[i];
+                    _characterAdapters[i] = new EnemyAdapter(_enemyViews[i], enemy, enemyAttack);
+                    _enemyViews[i].Enabled = true;
+                }
+                else
+                {
+                    _enemyViews[i].Enabled = false;
+                }
             }
+
+            _endGameAdapter = new EndGameAdapter(_endGameView, battle);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace UserInterface.Views.MoveViewElements
         public event Action Rerolled;
 
         [SerializeField] private BattleDiceElement[] _battleDiceElements;
-        [SerializeField] private Button _rerollButton;
+        [SerializeField] private GuardianRerollButtonElement _rerollButton;
         [SerializeField] private Image _avatarImage;
 
         public Sprite Avatar
@@ -23,8 +23,14 @@ namespace UserInterface.Views.MoveViewElements
 
         public bool RerollButtonEnabled
         {
-            get => _rerollButton.interactable;
-            set => _rerollButton.interactable = value;
+            get => _rerollButton.Interactable;
+            set => _rerollButton.Interactable = value;
+        }
+
+        public int RerollAmount
+        {
+            get => _rerollButton.RerollCount;
+            set => _rerollButton.RerollCount = value;
         }
 
         private void Awake()
@@ -35,7 +41,8 @@ namespace UserInterface.Views.MoveViewElements
                 var i1 = i;
                 battleDiceElement.Used += () => DiceUsed?.Invoke(i1);
             }
-            _rerollButton.onClick.AddListener(() => Rerolled?.Invoke());
+
+            _rerollButton.RerollClicked += () => Rerolled?.Invoke();
         }
     }
 }

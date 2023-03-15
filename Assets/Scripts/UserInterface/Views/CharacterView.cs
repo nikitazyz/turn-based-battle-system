@@ -1,6 +1,5 @@
 using System;
 using Dices;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 using UserInterface.Views.Elements;

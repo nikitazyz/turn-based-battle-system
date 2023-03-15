@@ -17,5 +17,11 @@ namespace UserInterface.Views
             get => _dice.sprite;
             set => _dice.sprite = value;
         }
+        
+        public bool Enabled
+        {
+            get => gameObject.activeSelf;
+            set => gameObject.SetActive(value);
+        }
     }
 }

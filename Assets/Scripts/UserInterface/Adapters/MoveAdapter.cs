@@ -1,6 +1,7 @@
 using System;
 using Core;
 using Dices;
+using Guardians;
 using StateMachineSystem;
 using StateMachineSystem.BattleStateMachine;
 using UnityEngine;
@@ -46,10 +47,20 @@ namespace UserInterface.Adapters
             var cellElements = View.GuardianCellElements;
             for (int i = 0; i < Battle.GuardianList.Count; i++)
             {
-                cellElements[i].Avatar = Battle.GuardianList[i].Avatar;
-                var dices = Battle.GuardianList[i].Dices;
-                RegisterOnDiceEvents(dices, cellElements[i]);
+                GuardianCell guardianCell = Battle.GuardianList[i];
+                int currentIndex = i;
+                cellElements[i].Avatar = guardianCell.Avatar;
+                var dices = guardianCell.Dices;
+                RegisterOnDiceEvents(dices, cellElements[currentIndex]);
+
+                Battle.GuardianList[i].RerollAmountChanged += () => OnRerollAmountChanged(guardianCell, currentIndex);
+                View.SetRerollAmount(i, guardianCell.RerollAmount);
             }
+        }
+
+        private void OnRerollAmountChanged(GuardianCell guardianCell, int index)
+        {
+            View.SetRerollAmount(index, guardianCell.RerollAmount);
         }
 
         private static void RegisterOnDiceEvents(BattleDice[] dices, GuardianCellElement cellElement)
@@ -85,9 +96,9 @@ namespace UserInterface.Adapters
             diceElement.FireFrameEnabled = dice.IsFlameOnActiveSide;
         }
 
-        private static void OnUsed(BattleDiceElement diceElement) => diceElement.Enabled = false;
+        private static void OnUsed(BattleDiceElement diceElement) => diceElement.IsUsed = false;
 
-        private static void OnReseted(BattleDiceElement diceElement) => diceElement.Enabled = true;
+        private static void OnReseted(BattleDiceElement diceElement) => diceElement.IsUsed = true;
 
         #endregion
 

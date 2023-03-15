@@ -29,6 +29,11 @@ namespace UserInterface.Views
         {
             _actionsLeft.text = $"{actions}/{maxActions}";
         }
+
+        public void SetRerollAmount(int index, int amount)
+        {
+            _guardianCellElements[index].RerollAmount = amount;
+        }
         
         private void Awake()
         {

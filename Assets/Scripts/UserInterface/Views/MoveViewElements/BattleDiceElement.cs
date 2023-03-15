@@ -14,6 +14,12 @@ namespace UserInterface.Views.MoveViewElements
 
         public bool Enabled
         {
+            get => _battleDiceUseButton.interactable;
+            set => _battleDiceUseButton.interactable = value;
+        }
+        
+        public bool IsUsed
+        {
             get => _image.gameObject.activeSelf;
             set => _image.gameObject.SetActive(value);
         }
