@@ -1,6 +1,7 @@
 using SceneLoadSystem;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SearchService;
 
 
 [CustomPropertyDrawer(typeof(ScenePathAttribute))]
@@ -28,6 +29,17 @@ public class ScenePathAttributeDrawer : PropertyDrawer
         position.x += position.width + 2;
         position.width = 28;
 
-        GUI.Button(position, "");
+        int id = EditorGUIUtility.GetControlID(FocusType.Passive);
+        
+        if (GUI.Button(position, ""))
+        {
+            EditorGUIUtility.ShowObjectPicker<SceneAsset>(null, false, "t:Scene", id);
+        }
+
+        string eventState = Event.current.commandName;
+        if (eventState == "ObjectSelectorUpdated" && EditorGUIUtility.GetObjectPickerControlID() == id)
+        {
+            property.stringValue = AssetDatabase.GetAssetPath(EditorGUIUtility.GetObjectPickerObject());
+        }
     }
 }
