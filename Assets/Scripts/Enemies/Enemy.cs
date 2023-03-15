@@ -17,5 +17,14 @@ namespace Enemies
         public Dice BattleDice => _battleDice;
 
         public int MaxHealth => _maxHealth;
+
+        public static Enemy CreateInstance(Dice dice, int health, RuntimeAnimatorController runtimeAnimatorController)
+        {
+            Enemy enemy = CreateInstance<Enemy>();
+            enemy._battleDice = dice;
+            enemy._maxHealth = health;
+            enemy._animatorController = runtimeAnimatorController;
+            return enemy;
+        }
     }
 }
