@@ -1,6 +1,6 @@
 using HealthSystem;
 using PoisonSystem;
-using UnityEditor.Animations;
+using UnityEngine;
 
 namespace CharacterSystem
 {
@@ -8,6 +8,6 @@ namespace CharacterSystem
     {
         public Health Health { get; }
         public PoisonEffect PoisonEffect { get; }
-        public AnimatorController AnimatorController { get; }
+        public RuntimeAnimatorController AnimatorController { get; }
     }
 }
