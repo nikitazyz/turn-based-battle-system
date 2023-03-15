@@ -47,10 +47,11 @@ namespace Enemies
 
             foreach (var enemy in _enemyList.AllAlive)
             {
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1.5f);
                 enemy.Health.TakeDamage(enemy.PoisonEffect.PoisonCounter--);
                 _attackProcessor.UseDice(enemy.Dice);
                 EnemyAttacked?.Invoke(enemy);
+                yield return new WaitForSeconds(1);
             }
             yield return new WaitForSeconds(1);
             AllEnemyAttacked?.Invoke();
