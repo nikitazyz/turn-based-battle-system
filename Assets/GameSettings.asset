@@ -15,3 +15,11 @@ MonoBehaviour:
   <Battle>k__BackingField:
     <BattleScene>k__BackingField: Assets/Scenes/BattleScene.unity
     <MaxActions>k__BackingField: 5
+  _mapScene: Assets/Scenes/DebugMode.unity
+  _editorScene: Assets/Scenes/DebugMode.unity
+  <Player>k__BackingField: {fileID: 11400000, guid: 48118271f72d89a48befa84875406cc1, type: 2}
+  <Guardians>k__BackingField:
+  - {fileID: 11400000, guid: 09ecbfe4e82419e4b976d457dd2b8fdb, type: 2}
+  - {fileID: 11400000, guid: 23b573dfc2ae65a44a3847e1b35ae93a, type: 2}
+  - {fileID: 11400000, guid: e7971b4419578ce468d2d957cc89dfe5, type: 2}
+  - {fileID: 11400000, guid: 545bf5eef16acba42aa983ac13cf0ea0, type: 2}
