@@ -1,7 +1,9 @@
 using System;
 using AttackSystem;
+using AudioSystem;
 using Dices;
 using Enemies;
+using FMODUnity;
 using Guardians;
 using PlayerSystem;
 using StateMachineSystem;
@@ -21,12 +23,7 @@ namespace Core
         public StateMachine StateMachine { get; }
         
         private readonly PlayerAttackProcessor _attackProcessor;
-        
-        //FMOD events
-        private static readonly string DiceRerollAudioEvent  = "event:/DiceReroll";
-        private static readonly string EndMoveAudioEvent  = "event:/EndMove";
-        private static readonly string DiceUsedAudioEvent  = "event:/DiceUsed";
-        private static readonly string NoActionsAudioEvent  = "event:/NoActions";
+        private readonly EventReferencesAsset _eventReferencesAsset;
 
 
         public Battle(StateMachine stateMachine, int maxActions, GuardianList guardianList, BattlePlayer player, EnemyList enemyList, PlayerAttackProcessor attackProcessor)
@@ -48,30 +45,30 @@ namespace Core
             }
             Actions = MaxActions;
             StateMachine.ChangeState<EnemyAttackState>();
-            FMODUnity.RuntimeManager.PlayOneShot(EndMoveAudioEvent);
+            FMODUnity.RuntimeManager.PlayOneShot(_eventReferencesAsset.MoveEvents.EndMove);
         }
 
         public void UseDice(BattleDice battleDice)
         {
             if (!CanAct())
             {
-                FMODUnity.RuntimeManager.PlayOneShot(NoActionsAudioEvent);
+                FMODUnity.RuntimeManager.PlayOneShot(_eventReferencesAsset.MoveEvents.NoActions);
                 return;
             }
             _attackProcessor.UseDice(battleDice);
             Act();
-            FMODUnity.RuntimeManager.PlayOneShot(DiceUsedAudioEvent);
+            FMODUnity.RuntimeManager.PlayOneShot(_eventReferencesAsset.DiceEvents.Use);
         }
 
         public void RerollDices(GuardianCell guardianCell)
         {
             if (StateMachine.CurrentState != typeof(UserMoveState) || guardianCell.RerollAmount <= 0)
             {
-                FMODUnity.RuntimeManager.PlayOneShot(NoActionsAudioEvent);
+                FMODUnity.RuntimeManager.PlayOneShot(_eventReferencesAsset.MoveEvents.NoActions);
                 return;
             }
             guardianCell.RerollDices();
-            FMODUnity.RuntimeManager.PlayOneShot(DiceRerollAudioEvent);
+            FMODUnity.RuntimeManager.PlayOneShot(_eventReferencesAsset.DiceEvents.Reroll);
         }
 
         public bool CanAct()

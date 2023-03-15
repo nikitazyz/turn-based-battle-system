@@ -19,6 +19,8 @@ namespace Core
     public class BattleBootstrapper : MonoBehaviour, IInitializable<BattleStatus>
     {
         [SerializeField] private BattleUIBootstrapper _battleUIBootstrapper;
+        [SerializeField] private EventReferencesAsset _eventReferencesAsset;
+        
         private StateMachine _stateMachine;
         private BattleStatus _battleStatus;
         private Battle _battle;
@@ -67,11 +69,16 @@ namespace Core
             _enemyList.EnemiesDead += EnemyListOnEnemiesDead;
             _player.Health.TookDamage += PlayerHealthOnTookDamage;
             
-            _fmodMusicEventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+            _fmodMusicEventInstance = FMODUnity.RuntimeManager.CreateInstance(_eventReferencesAsset.MusicEvents.Battle);
             _fmodMusicEventInstance.start();
         }
 
         private Battle InitializeBattle()
+        private void OnDestroy()
+        {
+            _fmodMusicEventInstance.stop(STOP_MODE.IMMEDIATE);
+        }
+
         {
             return new Battle(_stateMachine, _battleStatus.GameSettings.Battle.MaxActions, _guardianList, _player, _enemyList, _attackProcessor);
         }

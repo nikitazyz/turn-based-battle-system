@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2af698a46024178b37c0b011c6bece8, type: 3}
+  m_Name: FMODEventReferences
+  m_EditorClassIdentifier: 
+  BattleEvents:
+    Victory:
+      Guid:
+        Data1: -1072476867
+        Data2: 1198628419
+        Data3: 100918967
+        Data4: 1849762893
+      Path: event:/Battle/Victory
+    Lose:
+      Guid:
+        Data1: 711187158
+        Data2: 1122142153
+        Data3: -899558230
+        Data4: -2031796829
+      Path: event:/Battle/Lose
+  MoveEvents:
+    BeginMove:
+      Guid:
+        Data1: -1670155263
+        Data2: 1129957719
+        Data3: -836667716
+        Data4: -554824897
+      Path: event:/Move/BeginMove
+    EndMove:
+      Guid:
+        Data1: 95947895
+        Data2: 1337359349
+        Data3: 1023985310
+        Data4: -1134082020
+      Path: event:/Move/EndMove
+    NoActions:
+      Guid:
+        Data1: -932226011
+        Data2: 1173775327
+        Data3: 1241360022
+        Data4: 528271035
+      Path: event:/Move/NoActions
+  DiceEvents:
+    Reroll:
+      Guid:
+        Data1: 1373961590
+        Data2: 1183832487
+        Data3: 307113607
+        Data4: -478966475
+      Path: event:/Dice/DiceReroll
+    Use:
+      Guid:
+        Data1: 1373036038
+        Data2: 1330801249
+        Data3: 1475579803
+        Data4: 998247417
+      Path: event:/Dice/DiceUsed
+  DamageEvents:
+    Player:
+      Guid:
+        Data1: 649887779
+        Data2: 1177183449
+        Data3: -1578747223
+        Data4: -2081757070
+      Path: event:/Damage/Player
+    Sword:
+      Guid:
+        Data1: 1521507479
+        Data2: 1295090027
+        Data3: 557604780
+        Data4: -1964222462
+      Path: event:/Damage/Sword
+  DeathEvents:
+    Herald:
+      Guid:
+        Data1: -1221781413
+        Data2: 1168357183
+        Data3: -1684762451
+        Data4: -1304421369
+      Path: event:/Death/Herald
+    Punisher:
+      Guid:
+        Data1: -1561659605
+        Data2: 1121320565
+        Data3: 669198992
+        Data4: -710405254
+      Path: event:/Death/Punisher
+    Paladin:
+      Guid:
+        Data1: 1210323317
+        Data2: 1219111998
+        Data3: -892043352
+        Data4: 693644565
+      Path: event:/Death/Paladin
+  MusicEvents:
+    Battle:
+      Guid:
+        Data1: 1058171615
+        Data2: 1162741421
+        Data3: -376065356
+        Data4: 1453477179
+      Path: event:/Music/Battle
+  MagicEvents:
+    Use:
+      Guid:
+        Data1: 2051201839
+        Data2: 1278049670
+        Data3: -578320731
+        Data4: -141551111
+      Path: event:/Magic/Use
+    Mana:
+      Guid:
+        Data1: -1761850904
+        Data2: 1094849113
+        Data3: -1911929981
+        Data4: -738445915
+      Path: event:/Magic/Mana
+  AttackEvents:
+    Poisoning:
+      Guid:
+        Data1: 923366863
+        Data2: 1241822857
+        Data3: 1365277324
+        Data4: 1176128713
+      Path: event:/Attack/Poisoning
+    Ignition:
+      Guid:
+        Data1: -163284000
+        Data2: 1158455110
+        Data3: -1221467238
+        Data4: -1688832459
+      Path: event:/Attack/Ignition
+    Heal:
+      Guid:
+        Data1: 21677124
+        Data2: 1100953166
+        Data3: 1450236091
+        Data4: 1012132946
+      Path: event:/Attack/Heal
