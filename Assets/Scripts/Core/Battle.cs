@@ -21,14 +21,18 @@ namespace Core
         public BattlePlayer Player { get; }
         public EnemyList EnemyList { get; }
         public StateMachine StateMachine { get; }
-        
+        public EndGameStatus EndGameStatus { get; private set; } = EndGameStatus.None;
+
+        private readonly IGame _game;
         private readonly PlayerAttackProcessor _attackProcessor;
         private readonly EventReferencesAsset _eventReferencesAsset;
 
 
-        public Battle(StateMachine stateMachine, int maxActions, GuardianList guardianList, BattlePlayer player, EnemyList enemyList, PlayerAttackProcessor attackProcessor)
+        public Battle(IGame game, StateMachine stateMachine, int maxActions, GuardianList guardianList, BattlePlayer player, EnemyList enemyList, PlayerAttackProcessor attackProcessor, EventReferencesAsset eventReferencesAsset)
         {
+            _game = game;
             _attackProcessor = attackProcessor;
+            _eventReferencesAsset = eventReferencesAsset;
             StateMachine = stateMachine;
             GuardianList = guardianList;
             EnemyList = enemyList;
@@ -85,5 +89,34 @@ namespace Core
             Actions--;
             Acted?.Invoke();
         }
+
+        public void Win()
+        {
+            StateMachine.ChangeState<EndState>();
+            EndGameStatus = EndGameStatus.Win;
+        }
+
+        public void Lose()
+        {
+            StateMachine.ChangeState<EndState>();
+            EndGameStatus = EndGameStatus.Lose;
+        }
+
+        public void Exit()
+        {
+            _game.OpenBattleEditor();
+        }
+
+        public void Restart()
+        {
+            _game.StartBattle();
+        }
+    }
+
+    public enum EndGameStatus
+    {
+        None,
+        Lose,
+        Win
     }
 }

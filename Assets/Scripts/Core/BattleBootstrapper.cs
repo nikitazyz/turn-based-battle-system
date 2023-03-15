@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
 using AttackSystem;
+using AudioSystem;
 using CoroutineManagement;
-using Dices;
 using Enemies;
 using FMOD.Studio;
 using Guardians;
@@ -16,7 +16,7 @@ using UserInterface.UIBootstrappers;
 
 namespace Core
 {
-    public class BattleBootstrapper : MonoBehaviour, IInitializable<BattleStatus>
+    public class BattleBootstrapper : MonoBehaviour, IInitializable<IGame>
     {
         [SerializeField] private BattleUIBootstrapper _battleUIBootstrapper;
         [SerializeField] private EventReferencesAsset _eventReferencesAsset;
@@ -36,8 +36,11 @@ namespace Core
         private BattlePlayer _player;
         private EnemyList _enemyList;
 
-        public void Initialize(BattleStatus battleStatus)
+        
+
+        public void Initialize(IGame game)
         {
+            BattleStatus battleStatus = game.BattleStatus;
             _battleStatus = battleStatus;
 
             _player = CreatePlayer(battleStatus);
@@ -56,7 +59,7 @@ namespace Core
 
             _attackProcessor = new PlayerAttackProcessor(_enemyList, _player);
             
-            _battle = InitializeBattle();
+            _battle = InitializeBattle(game);
             _battleUIBootstrapper.Initialize(_battle, _attackProcessor, _enemyAttack);
 
             _stateMachine.ChangeState<UserMoveState>();
@@ -73,19 +76,19 @@ namespace Core
             _fmodMusicEventInstance.start();
         }
 
-        private Battle InitializeBattle()
         private void OnDestroy()
         {
             _fmodMusicEventInstance.stop(STOP_MODE.IMMEDIATE);
         }
 
+        private Battle InitializeBattle(IGame game)
         {
-            return new Battle(_stateMachine, _battleStatus.GameSettings.Battle.MaxActions, _guardianList, _player, _enemyList, _attackProcessor);
+            return new Battle(game, _stateMachine, _battleStatus.GameSettings.Battle.MaxActions, _guardianList, _player, _enemyList, _attackProcessor, _eventReferencesAsset);
         }
 
         private static EnemyList CreateEnemyList(BattleStatus battleStatus)
         {
-            return new EnemyList(battleStatus.Enemies.Select((enemy, _) => new BattleEnemy(enemy, 5)).ToArray());
+            return new EnemyList(battleStatus.Enemies.Select((enemy, _) => new BattleEnemy(enemy, enemy.MaxHealth)).ToArray());
         }
 
         private static BattlePlayer CreatePlayer(BattleStatus battleStatus)
@@ -114,15 +117,16 @@ namespace Core
 
         private void PlayerHealthOnTookDamage(TookDamageEventArgs args)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(_eventReferencesAsset.DamageEvents.Player);
             if (args.CurrentValue == 0)
             {
-                _stateMachine.ChangeState<EndState>();
+                _battle.Win();
             }
         }
 
         private void EnemyListOnEnemiesDead()
         {
-            _stateMachine.ChangeState<EndState>();
+            _battle.Lose();
         }
     }
 }

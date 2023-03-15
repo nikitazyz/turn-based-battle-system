@@ -7,12 +7,11 @@ namespace Core
 {
     public class BattleStatus
     {
-        public GameSettings GameSettings { get; }
-
-        public Guardian[] Guardians { get; }
-        public Enemy[] Enemies { get; }
-        public Player Player { get; }
-        public int PlayerHealth { get; }
+        public GameSettings GameSettings { get; set; }
+        public Guardian[] Guardians { get; set; }
+        public Enemy[] Enemies { get; set; }
+        public Player Player { get; set; }
+        public int PlayerHealth { get; set; }
 
         public BattleStatus(GameSettings gameSettings, Guardian[] guardians, Enemy[] enemies, Player player, int playerHealth)
         {
