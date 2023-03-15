@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7b33d4e43814bba939065f877d465d3, type: 3}
-  m_Name: Enemy
+  m_Name: Herald
   m_EditorClassIdentifier: 
   _battleDice: {fileID: 11400000, guid: 650766c22c5d388498ee48531f817cd9, type: 2}
-  _animatorController:
-    _useManualAnimatorController: 0
-    _idleClip: {fileID: 7400000, guid: cf09972b8d5c79144a1f48cb72369915, type: 2}
-    _attackClip: {fileID: 7400000, guid: 60b6f2e6ec3284040b4c228e13591add, type: 2}
-    _manualAnimatorController: {fileID: 9100000, guid: 41f9cc75589e7db4db1e0cb97a73e3f1, type: 2}
+  _maxHealth: 5
+  _animatorController: {fileID: 9100000, guid: 41f9cc75589e7db4db1e0cb97a73e3f1, type: 2}

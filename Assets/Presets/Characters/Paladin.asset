@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b33d4e43814bba939065f877d465d3, type: 3}
+  m_Name: Paladin
+  m_EditorClassIdentifier: 
+  _battleDice: {fileID: 11400000, guid: d7c4d35db963bfc4699cc591b0bced97, type: 2}
+  _maxHealth: 5
+  _animatorController: {fileID: 9100000, guid: 4c0943f74b7ee73498f15a723b977d25, type: 2}
