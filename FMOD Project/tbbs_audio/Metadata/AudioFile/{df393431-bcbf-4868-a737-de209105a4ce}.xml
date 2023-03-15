@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{df393431-bcbf-4868-a737-de209105a4ce}">
+		<property name="assetPath">
+			<value>paladin_death.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2462811791383219</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e1b965e7-2075-45f4-9954-b953de37f156}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{27b4960b-6f43-46cc-bb50-9d35361e99d1}">
+		<property name="assetPath">
+			<value>herald_death_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.57126984126984126</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e1b965e7-2075-45f4-9954-b953de37f156}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{51d6de06-6a61-4f52-9b8f-f357f90b803b}">
-		<property name="note" />
 		<property name="name">
 			<value>DiceUsed</value>
 		</property>
@@ -9,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{ea9b003b-fc5b-4feb-b3ee-353abd9da156}</destination>
+			<destination>{e6323737-8214-4a7e-888a-710ce9a532dc}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{90328a6a-42e2-498e-99c1-cda370dc0de3}</destination>
