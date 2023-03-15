@@ -49,6 +49,10 @@ namespace Enemies
             {
                 yield return new WaitForSeconds(1.5f);
                 enemy.Health.TakeDamage(enemy.PoisonEffect.PoisonCounter--);
+                if (enemy.Health.Value == 0)
+                {
+                    continue;
+                }
                 _attackProcessor.UseDice(enemy.Dice);
                 EnemyAttacked?.Invoke(enemy);
                 yield return new WaitForSeconds(1);
