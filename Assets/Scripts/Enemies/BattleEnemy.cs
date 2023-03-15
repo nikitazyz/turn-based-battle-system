@@ -3,7 +3,6 @@ using CharacterSystem;
 using Dices;
 using HealthSystem;
 using PoisonSystem;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Enemies
@@ -14,7 +13,7 @@ namespace Enemies
 
         public Health Health { get; }
         public PoisonEffect PoisonEffect { get; }
-        public AnimatorController AnimatorController { get; }
+        public RuntimeAnimatorController AnimatorController { get; }
 
         public BattleEnemy(Enemy enemy, int maxHealth, int healthValue)
         {

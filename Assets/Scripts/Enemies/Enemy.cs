@@ -1,6 +1,5 @@
 using Animation;
 using Dices;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Enemies
@@ -10,9 +9,9 @@ namespace Enemies
     {
         [SerializeField] private Dice _battleDice;
         
-        [SerializeField] private CharacterAnimatorParameter _animatorController;
+        [SerializeField] private RuntimeAnimatorController _animatorController;
 
-        public AnimatorController AnimatorController => _animatorController.GetAnimatorController();
+        public RuntimeAnimatorController AnimatorController => _animatorController;
 
         public Dice BattleDice => _battleDice;
     }

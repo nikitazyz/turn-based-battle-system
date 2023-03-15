@@ -1,7 +1,7 @@
 using CharacterSystem;
 using HealthSystem;
 using PoisonSystem;
-using UnityEditor.Animations;
+using UnityEngine;
 
 namespace PlayerSystem
 {
@@ -11,7 +11,7 @@ namespace PlayerSystem
         
         public Health Health { get; }
         public PoisonEffect PoisonEffect { get; }
-        public AnimatorController AnimatorController { get; }
+        public RuntimeAnimatorController AnimatorController { get; }
 
         public BattlePlayer(Player player, int maxHealth, int healthValue)
         {
