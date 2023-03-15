@@ -22,10 +22,20 @@ namespace SceneLoadSystem
                 Debug.LogWarning("Scene already loading");
                 return;
             }
-            _coroutine = StartCoroutine(LoadingRoutine(path, dontShowLoading));
+            _coroutine = StartCoroutine(LoadingRoutine(path, null, dontShowLoading));
+        }
+        
+        public void LoadScene(string path, Action onLoaded, bool dontShowLoading = false)
+        {
+            if (IsLoading)
+            {
+                Debug.LogWarning("Scene already loading");
+                return;
+            }
+            _coroutine = StartCoroutine(LoadingRoutine(path, onLoaded, dontShowLoading));
         }
 
-        IEnumerator LoadingRoutine(string path, bool dontShowLoading)
+        IEnumerator LoadingRoutine(string path, Action onLoaded, bool dontShowLoading)
         {
             IsLoading = true;
             if (!dontShowLoading)
@@ -33,6 +43,10 @@ namespace SceneLoadSystem
                 SceneManager.LoadScene(_loadingScenePath);
             }
 
+#if UNITY_EDITOR
+            Debug.Log("Debug loading!");
+            yield return new WaitForSeconds(5);
+#endif
             var loadingSceneOperation = SceneManager.LoadSceneAsync(path);
             while (!loadingSceneOperation.isDone)
             {
@@ -40,6 +54,7 @@ namespace SceneLoadSystem
                 yield return null;
             }
             SceneLoaded?.Invoke(path);
+            onLoaded?.Invoke();
             IsLoading = false;
         }
     }
